@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lexicon: Design System Overhaul // Chaitanya Katulwar UX Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <script>
+    // Immediate theme restoration to prevent flashing
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <meta http-equiv="refresh" content="0; url=work-prism.html">
+  <script>
+    window.location.replace("work-prism.html");
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn active-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline">BookMyShow // Design System overhaul</div>
+    <h1 class="cs-hero-title">Lexicon: Rebuilding the Core <span>Product Ecosystem</span></h1>
+    
+    <div class="cs-meta-grid">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Solo Lead Designer</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Scope</span>
+        <span class="cs-meta-value">100+ Components</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Platform</span>
+        <span class="cs-meta-value">Cross-Platform Web & Mobile</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Year</span>
+        <span class="cs-meta-value">2024 - 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <section class="cs-cover-image">
+    <div class="cs-cover-container">
+      <span class="cs-cover-placeholder">[ Full-Width Lexicon Component Library Asset Preview ]</span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Overview</h2>
+        <div class="cs-split-content">
+          <p>When a design system exists but nobody follows it, you don't have a system — you have a suggestion. At BookMyShow, designers were detaching components, creating one-off layouts, and skipping styles entirely. The library had fallen so far out of sync with the product that it was easier to ignore than use.</p>
+          <p>I rebuilt it solo from scratch as Lexicon — 100+ modular components for mobile and web, paired with usage guidelines that made the right choice the easy choice. It's now the foundation multiple product teams build on every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Grid -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-hairline-grid cols-3">
+        <div class="cs-grid-cell">
+          <div class="cs-grid-number">100+</div>
+          <h3 class="cs-grid-title">Modular Components</h3>
+          <p class="cs-grid-desc">Every basic element rebuilt from the atomic level up to support variables, states, and slot parameters.</p>
+        </div>
+        <div class="cs-grid-cell">
+          <div class="cs-grid-number">02</div>
+          <h3 class="cs-grid-title">Core Platforms</h3>
+          <p class="cs-grid-desc">Simultaneous layouts developed in tandem for iOS/Android mobile architectures and desktop web applications.</p>
+        </div>
+        <div class="cs-grid-cell">
+          <div class="cs-grid-number">∞</div>
+          <h3 class="cs-grid-title">Scalability Vector</h3>
+          <p class="cs-grid-desc">Clean, decoupled tokens ensuring zero discrepancies when engineers sync design libraries with codebases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Components</h2>
+        <div class="cs-split-content">
+          <p>I designed Lexicon’s components to be modular, consistent, and easy to scale across products. Each component has a clearly defined structure and states, making it flexible enough for different use cases while maintaining visual and interaction consistency.</p>
+          <div class="cs-quote-box">
+            "By ensuring all components map to production variables, we eliminated the design-to-code translation friction entirely."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guidelines -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Guidelines</h2>
+        <div class="cs-split-content">
+          <p>In addition to the new components, I created Lexicon’s guidelines to establish a shared design language across teams. They define how components should be used and adapted, ensuring consistency, clarity, and quality as the system grows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Auditing Process -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">The Auditing Process</h2>
+        <div class="cs-split-content">
+          <p>Before designing a single component, I conducted a thorough audit of the BookMyShow product ecosystem, reviewing over 40 key transactional screens. This audit revealed severe system divergence: we discovered 14 variations of the primary blue button color, 8 different input field styles, and more than 120 detached components across our design files.</p>
+          <p>To establish a clean baseline, I categorized these elements into critical components, layout patterns, and atomic styling units. By mapping out where the deviations occurred, we could pinpoint exactly why designers were detaching elements—mainly because the old system was too rigid to adapt to complex ticket discovery filters and screen aspect ratios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Token Architecture -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Token Architecture</h2>
+        <div class="cs-split-content">
+          <p>A key milestone in Lexicon's engineering adoption was the introduction of a three-tier design token architecture. Instead of hardcoding hex values directly in CSS or mobile stylesheets, we structured tokens into three distinct layers:</p>
+          <ul class="diff-list" style="margin-top: 1.5rem; margin-bottom: 0;">
+            <li style="margin-bottom: 1rem;"><strong>Global Tokens:</strong> The core foundation of our color, spacing, and font scales (e.g., <code>color-blue-500</code>).</li>
+            <li style="margin-bottom: 1rem;"><strong>Alias Tokens:</strong> Semantic definitions that assign meaning to global tokens, allowing them to shift dynamically between Light and Dark mode contexts (e.g., <code>surface-primary</code> maps to <code>neutral-900</code> in dark theme and <code>neutral-50</code> in light theme).</li>
+            <li style="margin-bottom: 0;"><strong>Component Tokens:</strong> The structural bindings unique to specific UI elements (e.g., <code>button-primary-active-bg</code>), shielding components from global variable updates.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="cs-section bg-hover">
+    <div class="cs-container">
+      <div class="cs-outcome-card">
+        <h2 class="cs-outcome-statement">Systematic <span>Ecosystem</span> Transformation</h2>
+        <div class="cs-outcome-details">
+          <p>Lexicon systematically eliminated compilation discrepancy debt, ensuring multiple product teams ship features 3x faster with absolute visual and interactive consistency across all client touchpoints.</p>
+          <p>Component detachment rates plummeted from over 65% to less than 2% within three months of deployment, establishing the system as a developer's and designer's favorite material.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel -->
+  <a href="work-live-events.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Project</span>
+      <h3 class="cs-next-title">Live Events Redesign</h3>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

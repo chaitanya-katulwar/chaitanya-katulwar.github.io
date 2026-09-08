@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prism v2: Design System // Chaitanya Katulwar UX Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <style>
+    /* === Prism v2 Polished Architecture & Scaled Layout System === */
+    
+    .prism-section-block {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .prism-section-intro {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 1024px) {
+      .prism-section-intro {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .prism-section-heading {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04rem;
+      color: var(--text-main);
+      position: relative;
+    }
+
+    .prism-section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: -0.6rem;
+      left: 0;
+      width: 44px;
+      height: 3px;
+      background-color: var(--accent-primary);
+    }
+
+    .prism-lead-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    .prism-lead-text p {
+      margin-bottom: 1.2rem;
+    }
+
+    .prism-lead-text p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* Compact Single-Row Stats Strip for Overview */
+    .prism-compact-stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--text-muted);
+      border: 1px solid var(--text-muted);
+      box-shadow: 4px 4px 0 var(--flat-shadow);
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .prism-compact-stat-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .prism-compact-stat-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-pill-item {
+      background: var(--surface-panel);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      transition: background-color var(--studio-duration) var(--studio-easing);
+    }
+
+    .stat-pill-num {
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+    }
+
+    .stat-pill-label {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--text-main);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Video Theater Showcase */
+    .video-theater-wrapper {
+      width: 100%;
+      background: #000;
+      border: 2px solid var(--text-main);
+      box-shadow: 10px 10px 0 var(--flat-shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-theater-wrapper video {
+      width: 100%;
+      height: auto;
+      max-height: 680px;
+      display: block;
+      object-fit: contain;
+      background: #08090C;
+    }
+
+    .video-caption-bar {
+      padding: 1rem 1.5rem;
+      background: var(--surface-panel);
+      border-top: 1px solid var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .video-caption-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+    }
+
+    /* Spec Boards & Interactive Containers */
+    .prism-spec-board {
+      width: 100%;
+      background: var(--surface-panel);
+      border: 2px solid var(--text-main);
+      box-shadow: 8px 8px 0 var(--flat-shadow);
+      padding: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .prism-spec-board {
+        padding: 1.5rem;
+      }
+    }
+
+    .board-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--text-muted);
+    }
+
+    .board-title-text {
+      font-family: 'Lexend', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      color: var(--text-main);
+    }
+
+    .board-live-chip {
+      font-family: monospace;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      background: var(--accent-primary);
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* Mode Switcher Buttons (Light/Dark & Mobile/Tablet/Desktop) */
+    .mode-tab-cluster {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--bg-main);
+      padding: 0.3rem;
+      border: 1px solid var(--text-muted);
+      width: fit-content;
+    }
+
+    .mode-tab-btn {
+      padding: 0.5rem 1.2rem;
+      background: transparent;
+      border: none;
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .mode-tab-btn.active {
+      background: var(--accent-primary);
+      color: #fff;
+      box-shadow: 2px 2px 0 var(--flat-shadow);
+    }
+
+    /* Color Modes Comparison Deck */
+    .color-modes-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .color-modes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .semantic-swatches-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .semantic-swatch-row {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      background: var(--bg-main);
+      border: 1px solid var(--text-muted);
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .color-preview-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .color-dot-mini {
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      border: 1px solid rgba(128,128,128,0.3);
+    }
+
+    /* Live Ticket UI Mockup Card for Color Modes */
+    .ticket-demo-card {
+      padding: 2rem;
+      border: 2px solid var(--text-main);
+      box-shadow: 6px 6px 0 var(--flat-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Measurement Modes 3-Way Comparison */
+    .measurement-modes-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 960px) {
+      .measurement-modes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .measurement-spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: monospace;
+      font-size: 0.85rem;
+      background: var(--bg-main);
+    }
+
+    .measurement-spec-table th, .measurement-spec-table td {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--text-muted);
+      text-align: left;
+    }
+
+    .measurement-spec-table th {
+      background: var(--surface-hover);
+      color: var(--text-main);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .measurement-spec-table tr.active-col-mobile td:nth-child(2),
+    .measurement-spec-table tr.active-col-tablet td:nth-child(3),
+    .measurement-spec-table tr.active-col-desktop td:nth-child(4) {
+      background: rgba(255, 82, 100, 0.12);
+      font-weight: bold;
+      color: var(--accent-primary);
+    }
+
+    /* Responsive Measurement Morphing Card */
+    .measurement-morph-box {
+      border: 2px solid var(--text-main);
+      background: var(--bg-main);
+      box-shadow: 6px 6px 0 var(--flat-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* 4-Layer Resolution Pipeline Grid */
+    .four-layer-deck {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .four-layer-deck {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .four-layer-deck {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .layer-card {
+      background: var(--bg-main);
+      border: 1px solid var(--text-muted);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .layer-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+    }
+
+    .layer-badge {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--accent-primary);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .layer-swatch-box {
+      width: 100%;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+    }
+
+    .layer-token-id {
+      font-family: monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      word-break: break-all;
+    }
+
+    .layer-info-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* 3-Column Clean Blue File Structure Cards (Zero Greys) */
+    .file-structure-blue-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .file-structure-blue-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .blue-guideline-card {
+      background: #2b6cb0;
+      border: 2px solid var(--text-main);
+      box-shadow: 6px 6px 0 var(--flat-shadow);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .blue-guideline-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .blue-card-caption {
+      padding: 1.2rem 1.5rem;
+      background: var(--surface-panel);
+      border-top: 1px solid var(--text-muted);
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* Spring Simulator Grid (2x2) */
+    .spring-quad-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 850px) {
+      .spring-quad-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .spring-quad-card {
+      background: var(--bg-main);
+      border: 1px solid var(--text-muted);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .spring-plot-svg {
+      width: 100%;
+      height: 120px;
+      background: var(--surface-panel);
+      border: 1px solid var(--text-muted);
+    }
+
+    .spring-controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--text-muted);
+    }
+
+    .spring-track-slot {
+      flex: 1;
+      max-width: 180px;
+      height: 42px;
+      background: var(--surface-panel);
+      border: 1px solid var(--text-muted);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+    }
+
+    .spring-fire-btn {
+      padding: 0.6rem 1.2rem;
+      background: var(--accent-primary);
+      color: #fff;
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 3px 3px 0 var(--flat-shadow);
+      white-space: nowrap;
+    }
+
+    .spring-box-target {
+      width: 34px;
+      height: 34px;
+      background: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      font-family: monospace;
+      position: relative;
+      left: 0;
+      transform: translateX(0);
+      box-shadow: 2px 2px 0 var(--flat-shadow);
+      will-change: transform;
+    }
+
+    /* Category Filter Tabs & Details */
+    .category-filter-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-nav-chip {
+      padding: 0.6rem 1.2rem;
+      background: var(--bg-main);
+      border: 1px solid var(--text-muted);
+      color: var(--text-main);
+      font-family: 'Lexend', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .category-nav-chip.active, .category-nav-chip:hover {
+      background: var(--accent-primary);
+      color: #fff;
+      border-color: var(--accent-primary);
+      box-shadow: 3px 3px 0 var(--flat-shadow);
+    }
+
+    .category-spec-box {
+      background: var(--bg-main);
+      border: 1px solid var(--text-muted);
+      padding: 2rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+  </style>
+  <script>
+    // Immediate theme restoration to prevent flashing
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn active-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline">BookMyShow // Design Systems Architecture & Governance</div>
+    <h1 class="cs-hero-title">Prism v2: The BookMyShow <span>Design System</span></h1>
+    
+    <div class="cs-meta-grid">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Lead Interaction & Systems Designer</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Scope</span>
+        <span class="cs-meta-value">295 Components · 684 Variants</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Tokens & Styles</span>
+        <span class="cs-meta-value">363 Variables · 55 Styles</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Platforms</span>
+        <span class="cs-meta-value">Android · iOS · Web (Single File)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Video Billboard: Zoom-out Components Recording -->
+  <section class="cs-cover-image" style="padding: 2rem 4rem;">
+    <div class="video-theater-wrapper" style="max-width: 1440px; margin: 0 auto;">
+      <video autoplay loop muted playsinline>
+        <source src="assets/prism/Components.mov" type="video/mp4">
+        <source src="assets/prism/Components.mov" type="video/quicktime">
+        Your browser does not support video playback.
+      </video>
+      <div class="video-caption-bar">
+        <span><strong>Figma Architectural Canvas:</strong> Continuous zoom demonstrating 295 components & 684 variants across 12 categories</span>
+        <span style="color: var(--accent-primary);">Single Master Figma File · 100% Token Compliance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <h2 class="prism-section-heading">Overview</h2>
+          <div class="prism-lead-text">
+            <p><strong>Prism v2</strong> is the single Figma source of truth for every BookMyShow product surface. Previously, I created <em>Lexicon</em> as a component library that operated alongside an existing legacy design system. As product complexity grew across Android, iOS, and Web, I architected and now manage Prism v2 from the ground up — a complete four-layer design system that eliminates component detachment, enforces 100% token compliance, and enables automated MCP machine readability.</p>
+            <p>The system serves three engineering platforms from one master file, resolving 363 variables, 55 styles, and 295 components without a single hardcoded value.</p>
+          </div>
+        </div>
+
+        <!-- Sleek Single-Line / Compact Stats Strip -->
+        <div class="prism-compact-stat-strip">
+          <div class="stat-pill-item">
+            <span class="stat-pill-num">363</span>
+            <span class="stat-pill-label">Variables (5 Collections)</span>
+          </div>
+          <div class="stat-pill-item">
+            <span class="stat-pill-num">295</span>
+            <span class="stat-pill-label">Components (684 Variants)</span>
+          </div>
+          <div class="stat-pill-item">
+            <span class="stat-pill-num">55</span>
+            <span class="stat-pill-label">Composed Styles</span>
+          </div>
+          <div class="stat-pill-item">
+            <span class="stat-pill-num">3</span>
+            <span class="stat-pill-label">Platforms · 1 File</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: The 4-Layer Resolution Architecture -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Architecture</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">1. Four-Layer Token Architecture</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Prism enforces an unbreakable 4-layer resolution hierarchy. Primitives hold raw values with no meaning; components bind strictly to semantic tokens or composed styles, never reaching into primitives directly.</p>
+          </div>
+        </div>
+
+        <div class="four-layer-deck">
+          <!-- Step 1 -->
+          <div class="layer-card">
+            <span class="layer-badge">01 · Primitives (76)</span>
+            <div class="layer-swatch-box" style="background: #FF5264;">#FF5264</div>
+            <div class="layer-token-id">solid/primary/p5</div>
+            <div class="layer-info-text">Raw palette hues with no meaning (p1-p9, g1-g9, 30 transparents). Single mode. Consumed only by Layer 2.</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="layer-card">
+            <span class="layer-badge">02 · Semantics (70)</span>
+            <div class="layer-swatch-box" style="background: #FF5264;">
+              <span>Light & Dark</span>
+            </div>
+            <div class="layer-token-id">accent/solid/primary/p5</div>
+            <div class="layer-info-text">Theme-aware tokens with Light/Dark values + 196 measurement tokens. Bound by all components.</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="layer-card">
+            <span class="layer-badge">03 · Styles (55)</span>
+            <div class="layer-swatch-box" style="background: linear-gradient(90deg, #DC354B 39%, #FF5264 100%);">
+              <span>Gradient Fill</span>
+            </div>
+            <div class="layer-token-id">gradients/cta</div>
+            <div class="layer-info-text">Composed text hierarchies, 14 exact-stop gradients, and 10 effect blur/glass stacks.</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="layer-card">
+            <span class="layer-badge">04 · Components (295)</span>
+            <button style="width: 100%; height: 52px; background: linear-gradient(90deg, #DC354B 39%, #FF5264 100%); color: #fff; border: none; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; cursor: pointer; box-shadow: 3px 3px 0 rgba(0,0,0,0.3);">
+              Book Tickets
+            </button>
+            <div class="layer-token-id">button/cta (24 var)</div>
+            <div class="layer-info-text">Published components binding styles and semantic variables. 100% token compliant.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Semantic Color Modes (Light & Dark Theme Engine) -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Theme Engine</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">2. Semantic Color Modes</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Primitives are single-mode and never flip. Theme switching in Prism is handled exclusively by the <strong>70 Semantic Color Tokens</strong> in Layer 2, divided into two distinct functional groups:</p>
+            <p>• <strong><code>themes/</code> (54 tokens):</strong> Tokens that invert with the mode. Surface backgrounds, text ramps (<code>text/primary</code> flips from #1A1A1A in Light to #FFFFFF in Dark), and greys (<code>g0</code> is white in Light and near-black in Dark).<br>
+            • <strong><code>accent/</code> (14 tokens):</strong> Tokens that hold brand identity across themes, shifting luminescence only enough to maintain WCAG contrast.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Color Modes Showcase Board -->
+        <div class="prism-spec-board">
+          <div class="board-top-row">
+            <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+              <span class="board-title-text">Semantic Theme Engine (70 Tokens)</span>
+              <div class="mode-tab-cluster">
+                <button class="mode-tab-btn" id="btn-theme-light" onclick="setSemanticThemeMode('light')">☀️ Light Mode</button>
+                <button class="mode-tab-btn active" id="btn-theme-dark" onclick="setSemanticThemeMode('dark')">🌙 Dark Mode</button>
+              </div>
+            </div>
+            <span class="board-live-chip" id="theme-status-chip">Dark Active</span>
+          </div>
+
+          <div class="color-modes-grid">
+            <!-- Left: Semantic Swatches Table -->
+            <div class="semantic-swatches-table">
+              <div class="semantic-swatch-row" style="background: var(--surface-hover); font-weight: bold; color: var(--text-main);">
+                <span>Semantic Token</span>
+                <span>Light Value</span>
+                <span>Dark Value</span>
+              </div>
+
+              <div class="semantic-swatch-row">
+                <span><code>themes/solid/surface_main</code></span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #FFFFFF;"></span> #FFFFFF</span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #12131A;"></span> #12131A</span>
+              </div>
+
+              <div class="semantic-swatch-row">
+                <span><code>themes/solid/surface_panel</code></span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #F7F7F7;"></span> #F7F7F7</span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #1A1C26;"></span> #1A1C26</span>
+              </div>
+
+              <div class="semantic-swatch-row">
+                <span><code>themes/solid/text_primary</code></span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #1A1A1A;"></span> #1A1A1A</span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #FFFFFF;"></span> #FFFFFF</span>
+              </div>
+
+              <div class="semantic-swatch-row">
+                <span><code>themes/solid/text_secondary</code></span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #666666;"></span> #666666</span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #B2B2B2;"></span> #B2B2B2</span>
+              </div>
+
+              <div class="semantic-swatch-row">
+                <span><code>accent/solid/primary/p5</code></span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #FF5264;"></span> #FF5264</span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #FF888D;"></span> #FF888D</span>
+              </div>
+
+              <div class="semantic-swatch-row">
+                <span><code>accent/solid/violet/v5</code></span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #9160FF;"></span> #9160FF</span>
+                <span class="color-preview-chip"><span class="color-dot-mini" style="background: #9160FF;"></span> #9160FF</span>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic BookMyShow UI Component Card -->
+            <div>
+              <div id="demo-ticket-card" class="ticket-demo-card" style="background: #1A1C26; color: #FFFFFF; border-color: #333644;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                  <div>
+                    <span id="demo-card-tag" style="font-family: monospace; font-size: 0.75rem; color: #FF888D; font-weight: bold; text-transform: uppercase;">NOW SHOWING · IMAX 3D</span>
+                    <h3 id="demo-card-title" style="font-family: 'Lexend', sans-serif; font-size: 1.4rem; font-weight: 800; margin: 0.4rem 0; color: #FFFFFF;">Interstellar: Special Re-Release</h3>
+                    <div id="demo-card-sub" style="font-size: 0.9rem; color: #B2B2B2;">PVR Icon: Phoenix Palladium, Mumbai</div>
+                  </div>
+                  <span id="demo-card-badge" style="padding: 0.3rem 0.6rem; background: #FF888D; color: #12131A; font-family: monospace; font-size: 0.75rem; font-weight: bold; border-radius: 3px;">
+                    9.4 ★
+                  </span>
+                </div>
+
+                <div id="demo-card-details-box" style="padding: 1rem; background: #12131A; border: 1px solid #333644; display: flex; justify-content: space-between; font-family: monospace; font-size: 0.85rem;">
+                  <div><span style="color: #8E94A5;">Date:</span> <strong id="demo-card-date" style="color: #FFFFFF;">Sat, 12 Sept</strong></div>
+                  <div><span style="color: #8E94A5;">Time:</span> <strong id="demo-card-time" style="color: #FFFFFF;">08:30 PM</strong></div>
+                  <div><span style="color: #8E94A5;">Seats:</span> <strong id="demo-card-seat" style="color: #FF888D;">M-14, M-15</strong></div>
+                </div>
+
+                <button id="demo-card-cta-btn" style="width: 100%; height: 48px; background: linear-gradient(90deg, #DC354B 39%, #FF5264 100%); color: #FFFFFF; border: none; font-family: 'Lexend', sans-serif; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; cursor: pointer; box-shadow: 3px 3px 0 rgba(0,0,0,0.3);">
+                  Book Tickets · ₹ 750
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: BMS Measurements 3-Way Mode Resolution (Mobile, Tablet, Desktop) -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// 3-Way Scaling</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">3. BMS Measurement Modes</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Prism solves multi-device responsiveness using the <strong>196-token BMS Measurements</strong> collection. Every margin, padding, radius, icon box, button height, and typography scale is defined with <strong>Mobile, Tablet, and Desktop modes</strong>. Selecting a platform mode shifts every dimension simultaneously without redesigning.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Measurement Modes Board -->
+        <div class="prism-spec-board">
+          <div class="board-top-row">
+            <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+              <span class="board-title-text">BMS Measurements 3-Way Mode Explorer</span>
+              <div class="mode-tab-cluster">
+                <button class="mode-tab-btn active" id="btn-measure-mobile" onclick="setMeasurementMode('mobile')">📱 Mobile (390px)</button>
+                <button class="mode-tab-btn" id="btn-measure-tablet" onclick="setMeasurementMode('tablet')">💻 Tablet (700px)</button>
+                <button class="mode-tab-btn" id="btn-measure-desktop" onclick="setMeasurementMode('desktop')">🖥️ Desktop (1440px)</button>
+              </div>
+            </div>
+            <span class="board-live-chip" id="measure-status-chip">Mobile Mode</span>
+          </div>
+
+          <div class="measurement-modes-grid">
+            <!-- Left: 3-Way Token Values Table -->
+            <div>
+              <table class="measurement-spec-table" id="measurement-table">
+                <thead>
+                  <tr>
+                    <th>Measurement Token</th>
+                    <th>Mobile Mode</th>
+                    <th>Tablet Mode</th>
+                    <th>Desktop Mode</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="active-col-mobile" id="row-margin">
+                    <td><code>margin/default</code></td>
+                    <td>20 px</td>
+                    <td>24 px</td>
+                    <td>40 px</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-padding-md">
+                    <td><code>padding/regular/md</code></td>
+                    <td>16 px</td>
+                    <td>20 px</td>
+                    <td>24 px</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-padding-lg">
+                    <td><code>padding/regular/lg</code></td>
+                    <td>20 px</td>
+                    <td>24 px</td>
+                    <td>28 px</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-btn-height">
+                    <td><code>length/button/height/md</code></td>
+                    <td>36 px</td>
+                    <td>40 px</td>
+                    <td>44 px</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-icon-size">
+                    <td><code>length/icon/md</code></td>
+                    <td>20 px</td>
+                    <td>24 px</td>
+                    <td>28 px</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-font-title">
+                    <td><code>font/size/title</code></td>
+                    <td>20 px (lh: 24)</td>
+                    <td>24 px (lh: 28)</td>
+                    <td>28 px (lh: 34)</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-radius-md">
+                    <td><code>radius/regular/md</code></td>
+                    <td>16 px</td>
+                    <td>18 px</td>
+                    <td>20 px</td>
+                  </tr>
+                  <tr class="active-col-mobile" id="row-border-thin">
+                    <td><code>border/thin</code></td>
+                    <td>0.5 px</td>
+                    <td>0.5 px</td>
+                    <td>1.0 px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Right: Dynamic Morphing UI Specimen Card -->
+            <div>
+              <div id="morph-specimen-card" class="measurement-morph-box" style="padding: 16px; border-radius: 16px; border-width: 1px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div id="morph-icon-box" style="width: 20px; height: 20px; background: #FF5264; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; font-weight: bold;">★</div>
+                    <span id="morph-title-text" style="font-family: 'Lexend', sans-serif; font-size: 20px; font-weight: 800; line-height: 24px; color: var(--text-main);">Live Event Pass</span>
+                  </div>
+                  <span id="morph-mode-badge" style="font-family: monospace; font-size: 11px; color: var(--accent-primary); font-weight: bold;">[ Mobile: 390px ]</span>
+                </div>
+
+                <p id="morph-desc-text" style="font-size: 14px; line-height: 20px; color: var(--text-muted); margin-bottom: 16px;">
+                  This component dynamically adjusts its padding, font size, button height, icon dimensions, and border strokes based on the active measurement mode.
+                </p>
+
+                <div style="display: flex; gap: 12px;">
+                  <button id="morph-btn-primary" style="flex: 1; height: 36px; background: #FF5264; color: #FFFFFF; border: none; font-family: 'Lexend', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; cursor: pointer; border-radius: 6px;">
+                    Confirm Booking
+                  </button>
+                  <button id="morph-btn-secondary" style="height: 36px; padding: 0 16px; background: var(--surface-panel); color: var(--text-main); border: 1px solid var(--text-muted); font-family: 'Lexend', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; border-radius: 6px;">
+                    Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: The 360–440px Mobile Breakpoint Contract -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Breakpoint Contract</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">4. The 360–440px Contract</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Mobile screens in Prism are authored at <strong>390×844 px</strong>. Auto-layout spacing and width-fill rules ensure layouts survive anywhere inside the 360–440px band without manual adjustment or breaking across diverse Android and iOS hardware.</p>
+          </div>
+        </div>
+
+        <div class="prism-spec-board">
+          <div class="board-top-row">
+            <span class="board-title-text">360–440px Mobile Reflow Simulator</span>
+            <span class="board-live-chip">Interactive Slider</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+            <div style="width: 100%; max-width: 600px; display: flex; flex-direction: column; gap: 0.8rem;">
+              <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.95rem; color: var(--accent-primary); font-weight: 700;">
+                <span>Viewport Width:</span>
+                <span id="reflow-val">390 px (Base Frame)</span>
+              </div>
+              <input type="range" min="360" max="440" value="390" id="reflow-input" style="width: 100%; accent-color: var(--accent-primary); cursor: pointer;" oninput="handleReflowChange(this.value)">
+              <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.75rem; color: var(--text-muted);">
+                <span>360px (Min Width)</span>
+                <span>390px (Authored Base)</span>
+                <span>440px (Max Width)</span>
+              </div>
+            </div>
+
+            <!-- Resizable Device Frame -->
+            <div style="width: 100%; overflow-x: auto; padding: 1.5rem 0; display: flex; justify-content: center;">
+              <div id="mock-device-frame" style="width: 390px; background: var(--bg-main); border: 2px solid var(--text-main); box-shadow: 8px 8px 0 var(--flat-shadow); padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem; transition: width 0.15s ease;">
+                <div style="background: var(--surface-panel); height: 42px; display: flex; align-items: center; justify-content: space-between; padding: 0 1rem; font-family: monospace; font-size: 0.8rem; border: 1px solid var(--text-muted);">
+                  <span>header (fill)</span>
+                  <span>auto-layout</span>
+                </div>
+                <div style="display: flex; gap: 0.8rem; overflow: hidden;">
+                  <div style="flex: 1; min-width: 90px; height: 90px; background: #FF5264; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; font-weight: bold; font-family: monospace;">f1/hero</div>
+                  <div style="flex: 1; min-width: 90px; height: 90px; background: #9160FF; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; font-weight: bold; font-family: monospace;">f2/offers</div>
+                  <div style="flex: 1; min-width: 90px; height: 90px; background: #5C90FF; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; font-weight: bold; font-family: monospace;">f3/cast</div>
+                </div>
+                <div style="background: var(--surface-panel); height: 52px; border: 1px solid var(--text-muted); display: flex; align-items: center; padding: 0 1rem; font-size: 0.8rem; color: var(--text-muted); font-family: monospace;">
+                  f1/recommended_movies (vertical-scroll)
+                </div>
+                <div style="background: var(--surface-panel); height: 36px; border: 1px solid var(--text-muted); display: flex; align-items: center; padding: 0 1rem; font-size: 0.75rem; color: var(--text-muted); font-family: monospace;">
+                  bottom (fixed optional)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: The 12-Category Component Library & Permutations Matrix -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Scale & Permutations</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">5. The Component Library</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>The library houses <strong>295 components (131 component sets, 164 standalone)</strong> producing <strong>684 variants</strong> across twelve category sections on the Components page. Every component is slash-namespaced and strictly composed of token-bound building blocks.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Category Matrix Explorer -->
+        <div class="prism-spec-board">
+          <div class="board-top-row">
+            <span class="board-title-text">Component Categories Matrix</span>
+            <span class="board-live-chip">Explore Categories</span>
+          </div>
+
+          <div class="category-filter-nav">
+            <button class="category-nav-chip active" onclick="showCategorySpec('buttons')">Buttons (63)</button>
+            <button class="category-nav-chip" onclick="showCategorySpec('cards')">Cards (65)</button>
+            <button class="category-nav-chip" onclick="showCategorySpec('nav')">Navigation (94)</button>
+            <button class="category-nav-chip" onclick="showCategorySpec('icons')">Icons (178)</button>
+            <button class="category-nav-chip" onclick="showCategorySpec('foundation')">Foundation (78)</button>
+            <button class="category-nav-chip" onclick="showCategorySpec('widgets')">Widgets (30)</button>
+          </div>
+
+          <div class="category-spec-box" id="category-details-box">
+            <strong>Category: BUTTONS (15 Components · 63 Variants)</strong><br>
+            • <code>button/cta</code> (24 variants, 4 heights xs-xl)<br>
+            • <code>button/round/audio_video</code>, <code>button/round/close</code>, <code>button/round/mute</code><br>
+            • <code>button/favourite</code>, <code>button/filters_and_sort</code>, <code>button/pill</code>, <code>button/stepper</code><br>
+            • Fully bound to <code>length/button/height</code> tokens and <code>gradients/cta</code>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: File Structure Standards (Clean 3-Column Blue Guidelines) -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Machine Readability</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">6. File Structure Standards</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Prism guidelines govern how product screens are built across the company so that designs are <strong>machine-parsable via Model Context Protocol (MCP)</strong> and ready for adaptive layouts (phones, foldables, and tablets). Below are visual blueprints from the production specification.</p>
+          </div>
+        </div>
+
+        <!-- 3-Column Blue Visual Guidelines Cards -->
+        <div class="file-structure-blue-grid">
+          <div class="blue-guideline-card">
+            <img src="assets/prism/fs-screen-structure.png" alt="Screen Structure: Status bar + Header, Scrollable Content, Bottom Nav" loading="lazy">
+            <div class="blue-card-caption">
+              <strong>01 · Screen Skeleton:</strong> Mandated separation of fixed Header, Scrollable Content frame, and optional Bottom bar/sheet.
+            </div>
+          </div>
+
+          <div class="blue-guideline-card">
+            <img src="assets/prism/fs-scrollable-content.png" alt="Scrollable Content Layer: Section Margins and Page Spacing" loading="lazy">
+            <div class="blue-card-caption">
+              <strong>02 · Decoupled Spacing:</strong> Section Margins (pink side padding) separate from Page Spacing (green gaps) so layouts reflow cleanly.
+            </div>
+          </div>
+
+          <div class="blue-guideline-card">
+            <img src="assets/prism/fs-individual-sections.png" alt="Individual Sections: f1 and f2 Level Structure" loading="lazy">
+            <div class="blue-card-caption">
+              <strong>03 · Level Naming:</strong> Strict <code>f1/section_title</code> and <code>f2/carousel/</code> naming standards enabling automated MCP code generation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Concentric Inset Radii Geometry -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Geometry Standards</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">7. Concentric Inset Geometry</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>When an inner container is nested inside a rounded card, applying an identical radius creates an optical distortion where corners look pinched. Prism locks 4 concentric inset radius families (<code>a, b, c, d</code>) using the mathematical formula: <code>R_inner = R_outer − Padding</code>.</p>
+          </div>
+        </div>
+
+        <div class="two-col-showcase-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+          <div class="prism-spec-board" style="align-items: center; justify-content: center; padding: 2.5rem; display: flex; flex-direction: column;">
+            <svg viewBox="0 0 200 200" style="width: 100%; max-width: 240px; display: block;">
+              <rect x="10" y="10" width="180" height="180" rx="24" fill="var(--bg-main)" stroke="var(--accent-primary)" stroke-width="3" />
+              <rect x="26" y="26" width="148" height="148" rx="8" fill="var(--surface-panel)" stroke="var(--text-muted)" stroke-width="2" />
+              <text x="100" y="95" text-anchor="middle" fill="var(--text-main)" font-family="monospace" font-size="11">R_outer = 24px</text>
+              <text x="100" y="115" text-anchor="middle" fill="var(--accent-primary)" font-family="monospace" font-size="11">Padding = 16px</text>
+              <text x="100" y="135" text-anchor="middle" fill="var(--text-muted)" font-family="monospace" font-size="11">R_inner = 8px</text>
+            </svg>
+            <span style="font-family: monospace; font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">// Concentric arc curvature calculation</span>
+          </div>
+
+          <div class="prism-spec-board">
+            <h4 style="font-family: 'Lexend', sans-serif; font-size: 1.1rem; font-weight: 800; text-transform: uppercase;">Pre-Solved Aspect Dimensions</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-top: 1rem;">
+              • <strong>66 Pre-solved Image Dimensions:</strong> Image aspect ratios (2:3, 3:2, 2:1, 16:9, 3:4) are solved mathematically for width tokens <code>a</code> through <code>k</code>. Designers never compute pixel heights by hand.<br><br>
+              • <strong>Border Tokens:</strong> <code>border/thin</code> resolves to 0.5px on mobile/tablet and 1.0px on desktop. A raw 0.5 value in a file is an audit failure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Spring Motion Physics Playground -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Kinetic Standards</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">8. Transitions & Spring Physics</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Prism catalogues <strong>107 prototype transitions (59 distinct)</strong>. Motion specifications hand off mathematical physics constants (mass, stiffness, damping) rather than settle times. SwiftUI, Jetpack Compose, and React-Spring derive rest thresholds natively on each operating system.</p>
+          </div>
+        </div>
+
+        <!-- 2x2 Spring Dynamics Playground -->
+        <div class="prism-spec-board">
+          <div class="board-top-row">
+            <span class="board-title-text">Interactive Spring Physics Simulator</span>
+            <span class="board-live-chip">Trigger Physics</span>
+          </div>
+
+          <div class="spring-quad-grid">
+            <!-- Spring 1 -->
+            <div class="spring-quad-card">
+              <div style="font-family: monospace; font-size: 0.95rem; font-weight: bold;">Spring 216/20 (ζ = 0.68)</div>
+              <svg class="spring-plot-svg" viewBox="0 0 100 50">
+                <path d="M 0,45 Q 25,0 40,30 T 70,25 T 100,25" fill="none" stroke="#FF5264" stroke-width="2" />
+              </svg>
+              <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
+                <span>Stiffness: 216 · Damp: 20</span>
+                <span>Overshoot: ~5%</span>
+              </div>
+              <div class="spring-controls-bar">
+                <button class="spring-fire-btn" onclick="triggerSpringAnim('target-1', 'cubic-bezier(0.2, 1.2, 0.4, 1)', 600)">Test 216</button>
+                <div class="spring-track-slot">
+                  <div class="spring-box-target" id="target-1">216</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spring 2 -->
+            <div class="spring-quad-card">
+              <div style="font-family: monospace; font-size: 0.95rem; font-weight: bold;">Spring 300/20 (ζ = 0.58)</div>
+              <svg class="spring-plot-svg" viewBox="0 0 100 50">
+                <path d="M 0,45 Q 20,-5 35,35 T 65,23 T 100,25" fill="none" stroke="#FF5264" stroke-width="2" />
+              </svg>
+              <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
+                <span>Stiffness: 300 · Damp: 20</span>
+                <span>Overshoot: ~11%</span>
+              </div>
+              <div class="spring-controls-bar">
+                <button class="spring-fire-btn" onclick="triggerSpringAnim('target-2', 'cubic-bezier(0.18, 1.4, 0.35, 1)', 500)">Test 300</button>
+                <div class="spring-track-slot">
+                  <div class="spring-box-target" id="target-2">300</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spring 3 -->
+            <div class="spring-quad-card">
+              <div style="font-family: monospace; font-size: 0.95rem; font-weight: bold;">Spring 333/20 (ζ = 0.55)</div>
+              <svg class="spring-plot-svg" viewBox="0 0 100 50">
+                <path d="M 0,45 Q 18,-10 32,38 T 60,22 T 100,25" fill="none" stroke="#FF5264" stroke-width="2" />
+              </svg>
+              <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
+                <span>Stiffness: 333 · Damp: 20</span>
+                <span>Overshoot: ~13%</span>
+              </div>
+              <div class="spring-controls-bar">
+                <button class="spring-fire-btn" onclick="triggerSpringAnim('target-3', 'cubic-bezier(0.15, 1.6, 0.3, 1)', 450)">Test 333</button>
+                <div class="spring-track-slot">
+                  <div class="spring-box-target" id="target-3">333</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spring 4 -->
+            <div class="spring-quad-card">
+              <div style="font-family: monospace; font-size: 0.95rem; font-weight: bold;">Spring 675/30 (ζ = 0.58)</div>
+              <svg class="spring-plot-svg" viewBox="0 0 100 50">
+                <path d="M 0,45 Q 12,-5 25,35 T 50,23 T 100,25" fill="none" stroke="#FF5264" stroke-width="2" />
+              </svg>
+              <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
+                <span>Stiffness: 675 · Damp: 30</span>
+                <span>1.5× Fast Settle</span>
+              </div>
+              <div class="spring-controls-bar">
+                <button class="spring-fire-btn" onclick="triggerSpringAnim('target-4', 'cubic-bezier(0.1, 1.45, 0.2, 1)', 300)">Test 675</button>
+                <div class="spring-track-slot">
+                  <div class="spring-box-target" id="target-4">675</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Weekly Release Pipeline & Governance -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="prism-section-block">
+        <div class="prism-section-intro">
+          <div>
+            <span class="interaction-meta-tag">// Operations & Auditing</span>
+            <h2 class="prism-section-heading" style="margin-top: 0.8rem;">9. Weekly Release Pipeline & Audits</h2>
+          </div>
+          <div class="prism-lead-text">
+            <p>Prism is maintained on a rigorous weekly cycle with an auditable changelog and a set of hard rules. Every change is mechanically diffed against a full structural crawl and published every Friday to Android, iOS, and Web engineering teams.</p>
+          </div>
+        </div>
+
+        <div class="prism-spec-board">
+          <div class="board-top-row">
+            <span class="board-title-text">Weekly Release & Audit Pipeline</span>
+            <span class="board-live-chip">Automated Loop</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <div style="background: var(--bg-main); padding: 1.5rem; border: 1px solid var(--text-muted); display: flex; flex-direction: column; gap: 0.8rem;">
+              <span style="font-family: monospace; font-size: 0.8rem; background: var(--accent-primary); color: #fff; padding: 0.2rem 0.5rem; font-weight: bold; width: fit-content;">01</span>
+              <strong style="font-size: 1rem;">Queue Staging Review</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">25 staging components reviewed before moving into core categories.</div>
+            </div>
+
+            <div style="background: var(--bg-main); padding: 1.5rem; border: 1px solid var(--text-muted); display: flex; flex-direction: column; gap: 0.8rem;">
+              <span style="font-family: monospace; font-size: 0.8rem; background: var(--accent-primary); color: #fff; padding: 0.2rem 0.5rem; font-weight: bold; width: fit-content;">02</span>
+              <strong style="font-size: 1rem;">Full Structural Crawl</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Automated tree traversal across all 6 production Figma pages.</div>
+            </div>
+
+            <div style="background: var(--bg-main); padding: 1.5rem; border: 1px solid var(--text-muted); display: flex; flex-direction: column; gap: 0.8rem;">
+              <span style="font-family: monospace; font-size: 0.8rem; background: var(--accent-primary); color: #fff; padding: 0.2rem 0.5rem; font-weight: bold; width: fit-content;">03</span>
+              <strong style="font-size: 1rem;">Mechanical 5-Axis Diff</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Diffed across Variables, Styles, Components, Layers, and Counts.</div>
+            </div>
+
+            <div style="background: var(--bg-main); padding: 1.5rem; border: 1px solid var(--text-muted); display: flex; flex-direction: column; gap: 0.8rem;">
+              <span style="font-family: monospace; font-size: 0.8rem; background: var(--accent-primary); color: #fff; padding: 0.2rem 0.5rem; font-weight: bold; width: fit-content;">04</span>
+              <strong style="font-size: 1rem;">Friday Publish & Audit</strong>
+              <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Changelog published to permanent web links for all dev teams.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section class="cs-section bg-hover">
+    <div class="cs-container">
+      <div class="cs-outcome-card">
+        <h2 class="cs-outcome-statement">Systemic <span>Engineering</span> Parity</h2>
+        <div class="cs-outcome-details">
+          <p>Prism v2 transformed BookMyShow from fragmented design files and detached legacy libraries into a high-precision, machine-parsable single source of truth serving Android, iOS, and Web from a single master Figma file.</p>
+          <p>With 363 variables, 196 responsive measurement tokens, 295 components, and an automated weekly release pipeline, Prism eliminated cross-platform compilation discrepancy debt and established a scalable foundation for modern product delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel -->
+  <a href="work-live-events.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Project</span>
+      <h3 class="cs-next-title">Live Events Redesign</h3>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+
+    // 1. Color Modes Interactive Controller (Semantic Themes & Live Component Transformation)
+    function setSemanticThemeMode(mode) {
+      const isDark = (mode === 'dark');
+      document.getElementById('btn-theme-light').classList.toggle('active', !isDark);
+      document.getElementById('btn-theme-dark').classList.toggle('active', isDark);
+      document.getElementById('theme-status-chip').innerText = isDark ? 'Dark Active' : 'Light Active';
+
+      const card = document.getElementById('demo-ticket-card');
+      const title = document.getElementById('demo-card-title');
+      const sub = document.getElementById('demo-card-sub');
+      const tag = document.getElementById('demo-card-tag');
+      const badge = document.getElementById('demo-card-badge');
+      const detailsBox = document.getElementById('demo-card-details-box');
+      const dateText = document.getElementById('demo-card-date');
+      const timeText = document.getElementById('demo-card-time');
+      const seatText = document.getElementById('demo-card-seat');
+      const ctaBtn = document.getElementById('demo-card-cta-btn');
+
+      if (isDark) {
+        card.style.background = '#1A1C26';
+        card.style.color = '#FFFFFF';
+        card.style.borderColor = '#333644';
+        title.style.color = '#FFFFFF';
+        sub.style.color = '#B2B2B2';
+        tag.style.color = '#FF888D';
+        badge.style.background = '#FF888D';
+        badge.style.color = '#12131A';
+        detailsBox.style.background = '#12131A';
+        detailsBox.style.borderColor = '#333644';
+        dateText.style.color = '#FFFFFF';
+        timeText.style.color = '#FFFFFF';
+        seatText.style.color = '#FF888D';
+      } else {
+        card.style.background = '#FFFFFF';
+        card.style.color = '#1A1A1A';
+        card.style.borderColor = '#DFDDDD';
+        title.style.color = '#1A1A1A';
+        sub.style.color = '#666666';
+        tag.style.color = '#DC354B';
+        badge.style.background = '#DC354B';
+        badge.style.color = '#FFFFFF';
+        detailsBox.style.background = '#F7F7F7';
+        detailsBox.style.borderColor = '#DFDDDD';
+        dateText.style.color = '#1A1A1A';
+        timeText.style.color = '#1A1A1A';
+        seatText.style.color = '#DC354B';
+      }
+    }
+
+    // 2. BMS Measurement Modes Interactive Controller (Mobile, Tablet, Desktop)
+    function setMeasurementMode(platform) {
+      document.querySelectorAll('#measurement-table tr').forEach(row => {
+        row.classList.remove('active-col-mobile', 'active-col-tablet', 'active-col-desktop');
+        row.classList.add('active-col-' + platform);
+      });
+
+      document.getElementById('btn-measure-mobile').classList.toggle('active', platform === 'mobile');
+      document.getElementById('btn-measure-tablet').classList.toggle('active', platform === 'tablet');
+      document.getElementById('btn-measure-desktop').classList.toggle('active', platform === 'desktop');
+
+      const chip = document.getElementById('measure-status-chip');
+      const card = document.getElementById('morph-specimen-card');
+      const icon = document.getElementById('morph-icon-box');
+      const title = document.getElementById('morph-title-text');
+      const desc = document.getElementById('morph-desc-text');
+      const badge = document.getElementById('morph-mode-badge');
+      const btnPri = document.getElementById('morph-btn-primary');
+      const btnSec = document.getElementById('morph-btn-secondary');
+
+      if (platform === 'mobile') {
+        chip.innerText = 'Mobile Mode (390px)';
+        badge.innerText = '[ Mobile: 390px ]';
+        card.style.padding = '16px';
+        card.style.borderRadius = '16px';
+        card.style.borderWidth = '1px';
+        icon.style.width = '20px';
+        icon.style.height = '20px';
+        title.style.fontSize = '20px';
+        title.style.lineHeight = '24px';
+        desc.style.fontSize = '14px';
+        desc.style.lineHeight = '20px';
+        btnPri.style.height = '36px';
+        btnPri.style.fontSize = '13px';
+        btnSec.style.height = '36px';
+        btnSec.style.fontSize = '13px';
+      } else if (platform === 'tablet') {
+        chip.innerText = 'Tablet Mode (700px)';
+        badge.innerText = '[ Tablet: 700px ]';
+        card.style.padding = '20px';
+        card.style.borderRadius = '18px';
+        card.style.borderWidth = '1px';
+        icon.style.width = '24px';
+        icon.style.height = '24px';
+        title.style.fontSize = '24px';
+        title.style.lineHeight = '28px';
+        desc.style.fontSize = '16px';
+        desc.style.lineHeight = '22px';
+        btnPri.style.height = '40px';
+        btnPri.style.fontSize = '14px';
+        btnSec.style.height = '40px';
+        btnSec.style.fontSize = '14px';
+      } else {
+        chip.innerText = 'Desktop Mode (1440px)';
+        badge.innerText = '[ Desktop: 1440px ]';
+        card.style.padding = '28px';
+        card.style.borderRadius = '20px';
+        card.style.borderWidth = '2px';
+        icon.style.width = '28px';
+        icon.style.height = '28px';
+        title.style.fontSize = '28px';
+        title.style.lineHeight = '34px';
+        desc.style.fontSize = '18px';
+        desc.style.lineHeight = '26px';
+        btnPri.style.height = '44px';
+        btnPri.style.fontSize = '15px';
+        btnSec.style.height = '44px';
+        btnSec.style.fontSize = '15px';
+      }
+    }
+
+    // 3. 360-440px Reflow Slider Controller
+    function handleReflowChange(val) {
+      document.getElementById('reflow-val').innerText = val + ' px (' + (val == 390 ? 'Base Frame' : 390 > val ? 'Narrow Mobile' : 'Wide Mobile') + ')';
+      document.getElementById('mock-device-frame').style.width = val + 'px';
+    }
+
+    // 4. Spring Trigger (bounded safely within track slot)
+    function triggerSpringAnim(targetId, curve, durationMs) {
+      const el = document.getElementById(targetId);
+      if (!el) return;
+      el.style.transition = `transform ${durationMs}ms ${curve}`;
+      el.style.transform = 'translateX(120px)';
+      setTimeout(() => {
+        el.style.transform = 'translateX(0)';
+      }, durationMs);
+    }
+
+    // 5. Component Matrix Filter
+    const categoryData = {
+      buttons: "<strong>Category: BUTTONS (15 Components · 63 Variants)</strong><br>• <code>button/cta</code> (24 variants, 4 heights xs-xl)<br>• <code>button/round/audio_video</code>, <code>button/round/close</code>, <code>button/round/mute</code><br>• <code>button/favourite</code>, <code>button/filters_and_sort</code>, <code>button/pill</code>, <code>button/stepper</code><br>• Fully bound to <code>length/button/height</code> tokens and <code>gradients/cta</code>.",
+      cards: "<strong>Category: CARDS (30 Components · 65 Variants)</strong><br>• <code>card/listing/portrait</code>, <code>card/listing/landscape</code><br>• <code>card/event_title</code>, <code>card/venue</code>, <code>card/booking</code>, <code>card/tour/match</code><br>• <code>card/offer/general</code>, <code>price_breakdown</code>, <code>card/payment_summary</code><br>• Uses concentric inset radius sets a-d.",
+      nav: "<strong>Category: NAVIGATION (30 Components · 94 Variants)</strong><br>• <code>header</code>, <code>header_content</code>, <code>header_actions</code> (3-layer mobile skeleton)<br>• <code>bottom_nav</code>, <code>date_picker</code>, <code>page_tabs</code>, <code>section_tabs</code>, <code>breadcrumbs</code><br>• <code>legend_content</code>, <code>seat_indicator</code>, <code>price</code>, <code>timer</code>.",
+      icons: "<strong>Category: ICONS (144 Components · 178 Variants)</strong><br>• 6 families: <code>icon/essential/</code> (51), <code>icon/audio_video/</code> (15), <code>icon/bms_special/</code> (34), <code>icon/category/</code> (13), <code>icon/payment/</code> (13), <code>icon/see_all/</code> (11) + 7 Logos.<br>• Rebound to semantic accent tokens with sizes xs(12px) to xl2(32px).",
+      foundation: "<strong>Category: FOUNDATION (16 Components · 78 Variants)</strong><br>• <code>badge/general</code>, <code>badge/status_usecases</code> (19 variants), <code>price_tag</code><br>• <code>divider</code> (14 variants), <code>selection/toggle</code>, <code>selection/checkbox</code>, <code>selection/radio_button</code>.<br>• Atomic pieces embedded across all other categories.",
+      widgets: "<strong>Category: WIDGETS (13 Components · 30 Variants)</strong><br>• <code>cinema_status</code>, <code>widget/movie_status</code>, <code>accordion/general</code><br>• <code>widget/showtimes/small</code>, <code>widget/showtimes/large</code>, <code>widget/map</code><br>• <code>widget/offers</code>, <code>widget/reward</code>, <code>artist_stats</code>."
+    };
+
+    function showCategorySpec(key) {
+      document.querySelectorAll('.category-nav-chip').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('category-details-box').innerHTML = categoryData[key] || categoryData['buttons'];
+    }
+  </script>
+</body>
+</html>

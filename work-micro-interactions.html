@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro Interactions // Chaitanya Katulwar UX Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn active-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline">BookMyShow // Motion design and UI Physics</div>
+    <h1 class="cs-hero-title">Micro Interactions: Fine-Tuning <span>Product Details</span></h1>
+    
+    <div class="cs-meta-grid">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Lead Motion Designer</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Scope</span>
+        <span class="cs-meta-value">Core Interface Motion Specs</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Platform</span>
+        <span class="cs-meta-value">iOS, Android & Desktop Web</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Year</span>
+        <span class="cs-meta-value">2023 - 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <section class="cs-cover-image">
+    <div class="cs-cover-container" style="background: none; box-shadow: none;">
+      <video src="assets/micro-interactions/Carousel parallax.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; box-shadow: 12px 12px 0 var(--flat-shadow); border: 2px solid var(--text-main);"></video>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Overview</h2>
+        <div class="cs-split-content">
+          <p>Micro-interactions don't get headlines, but they're often the difference between an app that feels premium and one that feels unfinished. At BookMyShow, I owned motion design across the product — not just concepting interactions, but defining specs precise enough for iOS and Android engineers to build them exactly right, sitting with developers separately to get the details correct.</p>
+          <p>The work includes a search bar with refined state logic and voice input, a parallax amusement parks carousel tested across multiple versions for UX quality, seat selection animations tuned individually for single seats and couch seats, and a tooltip that improved discoverability of the Live Events tab. Small details, deliberately designed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Interactions 2x2 Grid -->
+  <section class="cs-section bg-panel" style="padding-top: 4rem;">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title">Four Core Interactions</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem;">
+          
+          <!-- Cell 1 (Search) -->
+          <div class="interaction-media-cell" style="background-color: var(--surface-panel);">
+            <div class="interaction-video-box">
+              <video src="assets/micro-interactions/Search bar.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+            </div>
+            <div class="interaction-meta-box">
+              <span class="interaction-meta-tag">// Search</span>
+              <h3 class="interaction-meta-title">Search Bar State Logic</h3>
+              <p class="interaction-meta-desc">Refined focusing transitions, instant active states, and custom voice input loops designed to remove input latency perception.</p>
+            </div>
+          </div>
+
+          <!-- Cell 2 (Discovery) -->
+          <div class="interaction-media-cell" style="background-color: var(--surface-hover);">
+            <div class="interaction-video-box">
+              <video src="assets/micro-interactions/Carousel parallax.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+            </div>
+            <div class="interaction-meta-box">
+              <span class="interaction-meta-tag">// Discovery</span>
+              <h3 class="interaction-meta-title">Parallax Carousel</h3>
+              <p class="interaction-meta-desc">Custom physics parameters mapped to user swiping gestures to ensure smooth, hardware-accelerated carousel shifts across varying FPS boundaries.</p>
+            </div>
+          </div>
+
+          <!-- Cell 3 (Seat selection) -->
+          <div class="interaction-media-cell" style="background-color: var(--surface-hover);">
+            <div class="interaction-video-box">
+              <video src="assets/micro-interactions/movie seats.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+            </div>
+            <div class="interaction-meta-box">
+              <span class="interaction-meta-tag">// Seat Selection</span>
+              <h3 class="interaction-meta-title">Seat Selection Loops</h3>
+              <p class="interaction-meta-desc">Differentiated spring animation response matrices developed for single layout selections vs premium couch reservations.</p>
+            </div>
+          </div>
+
+          <!-- Cell 4 (Navigation) -->
+          <div class="interaction-media-cell" style="background-color: var(--surface-panel);">
+            <div class="interaction-video-box">
+              <video src="assets/micro-interactions/tooltip.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+            </div>
+            <div class="interaction-meta-box">
+              <span class="interaction-meta-tag">// Navigation</span>
+              <h3 class="interaction-meta-title">Live Events Tab Tooltip</h3>
+              <p class="interaction-meta-desc">A context-aware floating anchor highlight designed to gently draw attention to the newly introduced Live Events channel.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Process & specs</h2>
+        <div class="cs-split-content">
+          <p>Motion design is communication, not just decoration. Every spring, friction, and duration constant was specified in detail. Instead of throwing assets over the wall, I sat down with developers individually to tune animation physics in the code itself, ensuring Android spring dynamics felt just as snappy as iOS CoreAnimation variables.</p>
+          <div class="cs-quote-box">
+            "We translated pure timing curves directly into spring/friction parameters, establishing a unified motion spec sheet for engineer handoffs."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Easing Parameters -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Easing Parameters</h2>
+        <div class="cs-split-content">
+          <p>Standard animation presets like linear or default ease-in-out make interfaces feel mechanical or sluggish. To establish a premium, responsive feel, I standardized all interface easing curves using a custom cubic-bezier formula: <code>cubic-bezier(0.16, 1, 0.3, 1)</code>. This curve features a rapid initial acceleration followed by an extended, gradual deceleration phase.</p>
+          <p>For layouts involving physical behaviors (such as the amusement park drag carousel), we moved away from time-based curves entirely, implementing spring physics based on mass (1.0), stiffness (140), and damping (18). This prevents animations from feeling robotic, ensuring they respond naturally to dragging gestures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tactile Feedback -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Tactile Feedback</h2>
+        <div class="cs-split-content">
+          <p>Motion design is only as good as its performance. Stuttering or dropped frames directly break user immersion. I conducted rendering tests on mid-range Android devices, defining a strict 60fps rendering budget (16.6ms frame budget) for all transition layers.</p>
+          <p>To achieve this, we forced CSS hardware acceleration using properties like <code>will-change: transform, opacity</code>, ensuring browsers execute animations on the GPU rather than repainting layers on the main CPU thread. I spent hours pair-programming with developers to translate timing specifications into platform-native physics values.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="cs-section bg-hover">
+    <div class="cs-container">
+      <div class="cs-outcome-card">
+        <h2 class="cs-outcome-statement">Interactive <span>Premium</span> Feel</h2>
+        <div class="cs-outcome-details">
+          <p>Micro-interactions play a key role in guiding users through the page. By focusing on motion patterns and transitions, we enhanced overall usability, directed user attention naturally, and improved the sense of layout flow within the BookMyShow app and website.</p>
+          <p>Users experienced interfaces that felt responsive and alive, resulting in increased feature discoverability and a premium tactile product feel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel -->
+  <a href="work-os-updates.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Project</span>
+      <h3 class="cs-next-title">Up to Date with OS</h3>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

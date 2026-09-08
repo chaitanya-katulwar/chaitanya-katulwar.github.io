@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Widget Integration // Chaitanya Katulwar UX Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn active-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline">BookMyShow // Dynamic Partner Widget Integration</div>
+    <h1 class="cs-hero-title">Spotify Widget: Cohesive <span>Audio Previews</span></h1>
+    
+    <div class="cs-meta-grid">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Lead Product UX Designer</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Scope</span>
+        <span class="cs-meta-value">End-to-End Component Flow</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Platform</span>
+        <span class="cs-meta-value">Mobile & Widescreen Desktop Web</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Integration</span>
+        <span class="cs-meta-value">Spotify Partner SDK APIs</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <section class="cs-cover-image">
+    <div class="cs-cover-container" style="background: none; box-shadow: none;">
+      <img src="assets/spotify-widget/dark.png" alt="Spotify Widget in Event Details Page" style="width: 100%; height: 100%; object-fit: cover; box-shadow: 12px 12px 0 var(--flat-shadow); border: 2px solid var(--text-main);">
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Overview</h2>
+        <div class="cs-split-content">
+          <p>The pitch was straightforward: let users listen to an artist's songs directly on the event details page before buying a ticket. The execution required working within a strict constraint — Spotify's guidelines don't allow a seeker on embedded widgets, which rules out the most intuitive way to show playback progress. Working with PMs and engineers, I led the design end-to-end, finding solutions that respected Spotify's rules without making the widget feel broken or unfamiliar. </p>
+          <p>The result threads two brand languages into one cohesive component, with a sticky playback control that follows users as they scroll — so previewing music and completing a booking don't have to compete for attention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Constraint Callout (2-cell block) -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title" style="margin-bottom: 0;">Designing Around Constraints</h2>
+        <div class="cs-hairline-grid cols-2" style="margin-top: 2rem;">
+          <div class="cs-grid-cell">
+            <span class="interaction-meta-tag" style="color: var(--accent-sandbox);">// The Spotify Guideline</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">No Interactive Seekers</h3>
+            <p class="cs-grid-desc">Third-party embedded audio players are strictly prohibited from showing user-scrubbable timeline seekers or progress indicators that imply scrub capability.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <span class="interaction-meta-tag">// The UX Response</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">State-Based Circular Progress</h3>
+            <p class="cs-grid-desc">Engineered a custom-rendered circular loading ring around the play button. It indicates duration passage visually while signaling to users that scrubbing is non-interactive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Design split -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Visual Design</h2>
+        <div class="cs-split-content">
+          <p>A new addition to the event details page was the option for users to listen to the snippets of the songs from the artist performing in the concert. As we decided to go ahead with Spotify integration, I designed a widget carefully managing to follow their brand guidelines while keeping the design close to BookMyShow visual style.</p>
+          <div class="cs-quote-box" style="margin-bottom: 2rem;">
+            "Merging Spotify's vibrant neon green visual system with BookMyShow's high-density lookbook aesthetics was an exercise in brand balance."
+          </div>
+          
+          <div class="cs-hairline-grid cols-2" style="background-color: var(--text-muted); gap: 1px;">
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/spotify-widget/type_single_artist.png" alt="Single Artist Widget Variant" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Variant: Single Artist Highlight Header</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/spotify-widget/type_type3.png" alt="Alternative Widget Design" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Variant: High-density Track List Grid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactions (2 column) -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title">Interaction Breakdowns</h2>
+        
+        <div class="cs-hairline-grid cols-2" style="margin-top: 2rem; background-color: var(--text-muted); gap: 1px;">
+          <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+            <h4 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5rem;">Progress Without Seeker</h4>
+            <p class="cs-grid-desc" style="margin-bottom: 1.5rem;">We mapped the active sound wave amplitude data into a pulsing status outline surrounding the player container, visualising activity without standard navigation markers.</p>
+            <video src="assets/spotify-widget/screen_recording_2025-12-03_at_11.33.07___am - Trim.mp4" autoplay loop muted playsinline style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);"></video>
+          </div>
+          <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+            <h4 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5rem;">Sticky Media Strip</h4>
+            <p class="cs-grid-desc" style="margin-bottom: 1.5rem;">When users scroll down to choose seat packages, the player collapses into a minimized brutalist sticky toolbar at the bottom margin. This allows users to pause the track instantly without scrolling back up.</p>
+            <video src="assets/spotify-widget/screen_recording_2025-12-14_at_3.45.38___pm - Trim.mp4" autoplay loop muted playsinline style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branding Synergy -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Branding Synergy</h2>
+        <div class="cs-split-content">
+          <p>Merging two distinct brand identities inside a single web component requires careful visual hierarchy. Spotify's design system relies on neon green (<code>#1DB954</code>) highlights and rounded elements, which stood in direct conflict with BookMyShow's zero-border, sharp-angled lookbook grid lines.</p>
+          <p>I resolved this by containerizing the Spotify player iframe inside our signature sharp-cornered brutalist boxes with heavy flat shadows. We restricted Spotify's brand color strictly to operational states (like the pulsing active music waves and play indicators), utilizing our muted typography scale for titles, ensuring the widget feels native to the BookMyShow event funnel.</p>
+
+          <div class="cs-hairline-grid cols-2" style="margin-top: 2.5rem; background-color: var(--text-muted); gap: 1px;">
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/spotify-widget/dark.png" alt="Spotify Widget Dark Theme" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Integration theme: Dark Mode active</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/spotify-widget/light.png" alt="Spotify Widget Light Theme" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Integration theme: Light Mode active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Mechanics -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Technical Mechanics</h2>
+        <div class="cs-split-content">
+          <p>The widget uses a scroll intersection script to monitor the position of the main player frame. When the viewport scrolls 120px past the player wrapper, the script clones active player parameters and renders a floating navigation strip at the bottom viewport boundary using hardware-accelerated transforms.</p>
+          <p>To avoid dual-audio playback, we implemented a custom state listener that stops the main container's audio thread immediately when a new audio clip is selected on the sticky controls, keeping system performance lightweight and responsive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="cs-section bg-hover">
+    <div class="cs-container">
+      <div class="cs-outcome-card">
+        <h2 class="cs-outcome-statement">Seamless <span>Audio</span> Commerce</h2>
+        <div class="cs-outcome-details">
+          <p>The result threads two brand languages into one cohesive component, with a sticky playback control that follows users as they scroll — so previewing music and completing a booking don't have to compete for attention.</p>
+          <p>Event ticket conversion rates saw positive growth as users gained the ability to preview tracks without needing to navigate outside the transaction tunnel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel -->
+  <a href="work-tcs.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Project</span>
+      <h3 class="cs-next-title">TCS Airport Hospitality Portal</h3>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

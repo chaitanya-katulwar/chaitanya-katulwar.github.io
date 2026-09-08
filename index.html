@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strange Titles // Chaitanya Katulwar Portfolio</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  
+</head>
+<body>
+
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <button id="home-toggle-btn" class="nav-btn active-home" onclick="switchRoute('home-route')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </button>
+      
+      <button id="nav-industry-btn" class="nav-btn" onclick="switchRoute('industry-route')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </button>
+      
+      <button id="nav-about-btn" class="nav-btn" onclick="switchRoute('about-route')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </button>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="home-route" class="canvas-route active-route">
+    <header class="hero-viewport-mesh">
+      <div class="spiral-squares-matrix">
+        <div class="nested-square-node sq-1"></div>
+        <div class="nested-square-node sq-2"></div>
+        <div class="nested-square-node sq-3"></div>
+        <div class="nested-square-node sq-4"></div>
+        <div class="nested-square-node sq-5"></div>
+        <div class="nested-square-node sq-6"></div>
+      </div>
+      <h1 class="hero-title">Strange<br/>Titles</h1>
+    </header>
+
+    <main class="studio-grid-canvas">
+      <div class="section-label">
+        <span>Featured Industry Systems // Current Focus Portfolio</span>
+        <span>[ 01 — 02 ]</span>
+      </div>
+
+      <section class="featured-top-deck">
+        <article class="lookbook-card" onclick="window.location.href='work-prism.html'">
+          <div class="lookbook-card-media">
+            <img src="assets/prism/fs-screen-structure.png" alt="Prism v2 Design System" />
+          </div>
+          <div class="lookbook-card-meta">
+            <span class="tag-label">Ecosystem Core Architectures</span>
+            <h3>Prism v2: Design System</h3>
+            <p>The BookMyShow design system end-to-end: 295 components, 363 variables, and MCP machine-parsable architecture across Android, iOS, and Web.</p>
+          </div>
+        </article>
+
+        <article class="lookbook-card" onclick="window.location.href='work-live-events.html'">
+          <div class="lookbook-card-media">
+            <img src="assets/live-events/live events page.png" alt="Live Events Redesign" />
+          </div>
+          <div class="lookbook-card-meta">
+            <span class="tag-label">Discovery Funnel Redraft UX</span>
+            <h3>Live Events Redesign</h3>
+            <p>Modernizing layout hierarchy, scannability, and surfacing CTAs with context-specific urgency.</p>
+          </div>
+        </article>
+      </section>
+
+
+    </main>
+  </div>
+
+  <div id="industry-route" class="canvas-route">
+    <main class="studio-grid-canvas">
+      <div class="section-label"><span>Core Industry Tracks // Production UX Archives Portfolio</span></div>
+      <section class="featured-top-deck">
+        <div class="lookbook-card" onclick="window.location.href='work-prism.html'">
+          <div class="lookbook-card-media"><img src="assets/prism/fs-screen-structure.png" alt="Prism v2 Design System" /></div>
+          <div class="lookbook-card-meta"><span class="tag-label">BookMyShow</span><h3>Prism v2: Design System</h3><p>Building and managing BookMyShow's 4-layer design system with 295 components, 363 variables, and weekly release pipeline.</p></div>
+        </div>
+        <div class="lookbook-card" onclick="window.location.href='work-live-events.html'">
+          <div class="lookbook-card-media"><img src="assets/live-events/live events page.png" alt="Live Events Redesign" /></div>
+          <div class="lookbook-card-meta"><span class="tag-label">BookMyShow</span><h3>Live Events Redesign</h3><p>Modernizing layout hierarchy, scannability, and surfacing CTAs with context-specific urgency.</p></div>
+        </div>
+        <div class="lookbook-card" onclick="window.location.href='work-micro-interactions.html'">
+          <div class="lookbook-card-media"><video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline"><source src="assets/micro-interactions/Carousel parallax.mp4" type="video/mp4" /></video></div>
+          <div class="lookbook-card-meta"><span class="tag-label">BookMyShow</span><h3>Micro Interactions</h3><p>Defining precise UI physics specs for search focus, carousels, seat selection, and navigational tooltips.</p></div>
+        </div>
+        <div class="lookbook-card" onclick="window.location.href='work-os-updates.html'">
+          <div class="lookbook-card-media"><img src="assets/os-updates/screenshot_2025-11-08_at_1.13.24___pm.png" alt="Up to Date with OS" style="object-position: top;" /></div>
+          <div class="lookbook-card-meta"><span class="tag-label">BookMyShow</span><h3>Up to Date with OS</h3><p>Designing cross-platform response specs for Android 15 edge-to-edge shifts and system gesture overrides.</p></div>
+        </div>
+        <div class="lookbook-card" onclick="window.location.href='work-spotify-widget.html'">
+          <div class="lookbook-card-media"><img src="assets/spotify-widget/dark.png" alt="Spotify Widget Integration" /></div>
+          <div class="lookbook-card-meta"><span class="tag-label">BookMyShow</span><h3>Spotify Widget Integration</h3><p>Threading brand languages into a single component with circular play indicators and sticky controls.</p></div>
+        </div>
+        <div class="lookbook-card" onclick="window.location.href='work-tcs.html'">
+          <div class="lookbook-card-media"><img src="assets/tcs/_MG_5731.JPG" alt="TCS Airport Hospitality Portal" /></div>
+          <div class="lookbook-card-meta"><span class="tag-label">TCS Interactive</span><h3>Airport Hospitality Portal</h3><p>End-to-end service blueprint and interfaces spanning supervisor dashboards and mobile agent apps.</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <div id="about-route" class="canvas-route">
+    <main class="about-workspace-canvas">
+      <section class="about-structural-grid">
+        <div class="about-portrait-frame">
+          <img src="assets/about/IMG_20241204_113608_909.webp" alt="Chaitanya Katulwar" id="about-portrait-img" loading="eager" />
+        </div>
+        <div class="about-narrative">
+          <h2>Chaitanya Katulwar</h2>
+          <div class="about-role-tagline">// User Experience Designer</div>
+          <p>Hi, I’m Chaitanya — a designer focused on interaction craft, scalable design systems, and bridging the gap between design vision and production engineering.</p>
+          <p>As the Interaction Designer at bookmyshow, my day to day involves building and maintaining our multi-platform design system across Android, iOS, and Web, designing core consumer booking funnels, and defining motion physics and micro-interactions for millions of users.</p>
+          <p>Previously at <strong>Tata Consultancy Services (TCS)</strong>, I led the end-to-end UX for an airport hospitality operations platform — designing a desktop operations portal for supervisors and a tablet application for ground agents to streamline real-time services from VIP meet-and-greet to lounge access.</p>
+          <p>When I’m not refining design architectures or prototyping interactions, you’ll usually find me listening to Rock Music, watching movies, and playing story based video games.</p>
+
+          <div class="direct-contact-grid">
+            <a href="mailto:chaitanyakatulwar@gmail.com" class="contact-channel-card">
+              <div class="contact-channel-meta">
+                <span class="contact-channel-label">// Email</span>
+                <strong class="contact-channel-value">chaitanyakatulwar@gmail.com</strong>
+              </div>
+              <span class="contact-arrow-icon">↗</span>
+            </a>
+
+            <a href="tel:+918600030547" class="contact-channel-card">
+              <div class="contact-channel-meta">
+                <span class="contact-channel-label">// Mobile / WhatsApp</span>
+                <strong class="contact-channel-value">+91 8600030547</strong>
+              </div>
+              <span class="contact-arrow-icon">↗</span>
+            </a>
+
+            <a href="https://www.instagram.com/chaitanyakatulwar/" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+              <div class="contact-channel-meta">
+                <span class="contact-channel-label">// Instagram</span>
+                <strong class="contact-channel-value">@chaitanyakatulwar</strong>
+              </div>
+              <span class="contact-arrow-icon">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let lastTime = performance.now();
+    let speedMultiplier = 0; 
+    
+    // Configured at 20% reduced overall rotational cruise velocities
+    const baseRotationSpeeds = [
+      360 / 27.5, // Inner Layer (Fastest Loop Track)
+      360 / 40.0,
+      360 / 55.0,
+      360 / 72.5,
+      360 / 92.5,
+      360 / 115.0 // Outer Layer (Slowest Loop Track)
+    ];
+    
+    // Explicit array initialization to guarantee a clean unrotated beginning state
+    const accumulatedAngles = [0, 0, 0, 0, 0, 0];
+
+    function globalMatrixTick(currentTime) {
+      const dt = (currentTime - lastTime) / 1000;
+      lastTime = currentTime;
+
+      // Smooth parametric interpolation over 4 seconds to ease into cruise momentum
+      if (1 > speedMultiplier) {
+        speedMultiplier += dt * 0.25; 
+        if (speedMultiplier > 1) speedMultiplier = 1;
+      }
+
+      const scrolled = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      if (viewportHeight > scrolled) {
+        const title = document.querySelector('.hero-title');
+        if (title) {
+          title.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
+          title.style.opacity = Math.max(0, 1 - scrolled / 600);
+        }
+
+        const squares = document.querySelectorAll('.nested-square-node');
+        squares.forEach((sq, i) => {
+          const scaleFactor = (i + 1) * 0.05;
+          const scrollRotationSpeed = 0.09 - (i * 0.013);
+          
+          // Accumulate incremental delta angles cleanly from zero
+          accumulatedAngles[i] += baseRotationSpeeds[i] * dt * speedMultiplier;
+          
+          // Compounded scroll depth zoom + rotation vectors without absolute offsets
+          sq.style.transform = `scale(${1 + scrolled * scaleFactor * 0.0025}) rotate(${accumulatedAngles[i] + scrolled * scrollRotationSpeed}deg)`;
+        });
+      }
+
+      requestAnimationFrame(globalMatrixTick);
+    }
+    
+    // Trigger runtime loop assembly
+    requestAnimationFrame(globalMatrixTick);
+
+    function switchRoute(targetViewId) {
+      const routes = document.querySelectorAll('.canvas-route');
+      const buttons = document.querySelectorAll('.nav-btn');
+      const homeBtn = document.getElementById('home-toggle-btn');
+      const indBtn = document.getElementById('nav-industry-btn');
+      const aboutBtn = document.getElementById('nav-about-btn');
+      
+      routes.forEach(route => route.classList.remove('active-route'));
+      buttons.forEach(btn => btn.classList.remove('active-nav'));
+      homeBtn.classList.remove('active-home');
+
+      const target = document.getElementById(targetViewId);
+      if(target) {
+        target.classList.add('active-route');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+
+      if (targetViewId === 'home-route') homeBtn.classList.add('active-home');
+      if (targetViewId === 'industry-route' && indBtn) indBtn.classList.add('active-nav');
+      if (targetViewId === 'about-route' && aboutBtn) aboutBtn.classList.add('active-nav');
+    }
+
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+
+    // Hash routing for deep links returning from case study pages
+    function handleHashRoute() {
+      const hash = window.location.hash;
+      if (hash === '#industry') {
+        switchRoute('industry-route');
+      } else if (hash === '#about') {
+        switchRoute('about-route');
+      } else {
+        switchRoute('home-route');
+      }
+    }
+
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        handleHashRoute();
+      }
+    });
+
+    window.addEventListener('hashchange', handleHashRoute);
+  </script>
+</body>
+</html>

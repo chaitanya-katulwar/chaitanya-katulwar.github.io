@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Friction Variable // Chaitanya Katulwar Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <style>
+    .blog-article-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 12rem 2rem 8rem 2rem;
+    }
+    .blog-header {
+      margin-bottom: 4rem;
+    }
+    .blog-meta {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .blog-title {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+    .blog-content {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .blog-content p {
+      margin-bottom: 2rem;
+    }
+    .blog-content h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 3.5rem 0 1.5rem 0;
+      text-transform: uppercase;
+      letter-spacing: -0.02rem;
+    }
+    .blog-content blockquote {
+      border-left: 4px solid var(--accent-primary) !important;
+      padding: 1rem 0 1rem 2rem;
+      margin: 3rem 0;
+      font-family: 'Lexend', sans-serif;
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.3rem;
+    }
+    .blog-content pre {
+      background: var(--surface-panel);
+      padding: 2rem;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin: 3rem 0;
+      box-shadow: 6px 6px 0 var(--flat-shadow);
+      transition: background-color var(--studio-duration) var(--studio-easing);
+    }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      <a href="index.html#industry" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      <a href="index.html#sandbox" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span>Sandbox</span>
+      </a>
+      <a href="index.html#photography" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <span>Photography</span>
+      </a>
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Article Container -->
+  <article class="blog-article-body">
+    <header class="blog-header">
+      <span class="blog-meta">June 2026 // Platform Guidelines Portfolio</span>
+      <h1 class="blog-title">The Friction Variable: Structural Variances and Grid Tokens Across OS Contexts</h1>
+    </header>
+    
+    <div class="blog-content">
+      <p>Designing cross-platform systems doesn't just mean building reusable buttons. The real friction lies in the layout. iOS and Android interpret grids, bounds, and component nesting behaviors in fundamentally different ways. When design systems ignore these structural variances, engineering teams inherit compilation discrepancy debt.</p>
+      
+      <h2>Safe Areas vs. System Windows</h2>
+      <p>Apple's UIKit defines the safe area in relation to overlays like the notch or home indicator. Google's Material Design handles window insets dynamically. This creates offset discrepancies when mapping identical top-navigation cards in Figma. To resolve this, modern design tokens should not export absolute height integers; they must expose variable equations mapped to OS native runtime calculations.</p>
+      
+      <blockquote>
+        "A system is only as consistent as its lowest common structural denominator. If your tokens output static pixel values, you are designing static suggestions."
+      </blockquote>
+      
+      <h2>Mapping Grid Insets</h2>
+      <p>To eliminate discrepancies, we replaced static pixel paddings with dynamic formula tokens. In our cross-platform design token engine, margin definitions are exported as abstract keys that read native OS safety constraints first before applying the system offsets:</p>
+      
+      <pre>
+// Design Token Definition
+{
+  "spacing": {
+    "safe-margin-x": "clamp(16px, env(safe-area-inset-left), 24px)"
+  }
+}
+      </pre>
+
+      <p>Implementing this token structure allowed our product interfaces to load instantly on Android 15 edge-to-edge layouts and iOS 17 dynamic islands alike, systematically saving hundreds of engineering alignment hours.</p>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

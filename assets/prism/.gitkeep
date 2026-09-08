@@ -1,0 +1,9 @@
+# Prism v2 assets directory.
+# Place screenshots exported from Figma here:
+# - hero-overview.png (Cover / Overview banner)
+# - token-architecture.png (4-layer token structure / Color & Semantic ramps)
+# - measurement-system.png (196-token measurement ramp, radius insets, responsive contract)
+# - component-library.png (Component categories / 684 variants showcase)
+# - file-structure-standard.png (3-layer screen skeleton & MCP structure)
+# - motion-springs.png (Transition specs, spring curves 216/300/333/675)
+# - governance-pipeline.png (Weekly crawl/diff/publish pipeline & audits)

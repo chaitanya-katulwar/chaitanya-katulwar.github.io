@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight: Cinematic UX // Chaitanya Katulwar Sandbox</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#sandbox" class="nav-btn active-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span>Sandbox</span>
+      </a>
+      
+      <a href="index.html#photography" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <span>Photography</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline" style="color: var(--accent-sandbox);">Sandbox // Design College Thesis</div>
+    <h1 class="cs-hero-title">Spotlight: Multi-Layer <span>Cinematic UX</span></h1>
+    
+    <div class="cs-meta-grid" style="box-shadow: 8px 8px 0 var(--accent-sandbox);">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Concept</span>
+        <span class="cs-meta-value">Interactive Film Space</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Medium</span>
+        <span class="cs-meta-value">WebGL & Canvas Video</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Focus</span>
+        <span class="cs-meta-value">Spatial Narrative Layouts</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Location</span>
+        <span class="cs-meta-value">Pearl Academy Delhi</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <section class="cs-cover-image">
+    <div class="cs-cover-container" style="background: #251829;">
+      <span class="cs-cover-placeholder">[ Full-Width Visual: Multi-layered Spatial Cinematic Canvas demo ]</span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">The Thesis</h2>
+        <div class="cs-split-content">
+          <p>Traditional cinema bounds the audience behind a static, linear frame. In my design college graduation thesis at Pearl Academy, I set out to shatter this boundary. Spotlight is an experimental interactive cross-media storytelling platform converting standard cinema capturing reels into controllable spatial user layouts.</p>
+          <p>Using multi-layered video synchronization, users can scrub, split, and zoom through parallel narrative timelines running concurrently. It translates cinema from a passive consumption medium into an active spatial landscape, letting the viewer direct their own focus in real time.</p>
+          <div class="cs-quote-box" style="box-shadow: 8px 8px 0 var(--accent-sandbox);">
+            "By treating screen space as a timeline vector, we allow viewers to step inside the editing process itself."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Concept split -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Interaction Model</h2>
+        <div class="cs-split-content">
+          <p>The interface divides the browser viewport into responsive geometric canvas panes. As the primary cinematic timeline plays, related b-rolls, metadata overlays, and secondary character tracks load dynamically in the surrounding frames. Users can click any panel to expand it, shifting focus and dynamically re-orchestrating the audio mix based on spatial hierarchy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel -->
+  <a href="play-layouts.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Sandbox Project</span>
+      <h3 class="cs-next-title">Parametric Layout Code Blueprints</h3>
+    </div>
+    <span class="cs-next-arrow" style="color: var(--accent-sandbox);">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#sandbox">Sandbox</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

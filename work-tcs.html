@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCS Airport Hospitality Portal // Chaitanya Katulwar UX Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn active-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline">TCS Interactive // Plaza Premium Group client</div>
+    <h1 class="cs-hero-title">Airport Hospitality: Coordinating <span>Operational Chaos</span></h1>
+    
+    <div class="cs-meta-grid">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Lead UX Designer</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Scope</span>
+        <span class="cs-meta-value">End-to-End Service System</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Platform</span>
+        <span class="cs-meta-value">Desktop & Tablet Interface Ecosystem</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Users</span>
+        <span class="cs-meta-value">Supervisors, Dispatchers & Ground Agents</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <section class="cs-cover-image">
+    <div class="cs-cover-container" style="background: none; box-shadow: none;">
+      <img src="assets/tcs/_MG_5731.JPG" alt="Plaza Premium lounge ground operations" style="width: 100%; height: 100%; object-fit: cover; box-shadow: 12px 12px 0 var(--flat-shadow); border: 2px solid var(--text-main);">
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Overview</h2>
+        <div class="cs-split-content">
+          <p>Managing airport hospitality services means coordinating dozens of moving parts — agents, supervisors, service timings, and traveler expectations — all in real time. At TCS, I led the UX for an internal platform built to bring that complexity under control. </p>
+          <p>The system spanned two products: a desktop operations portal for supervisors and a tablet app for agents and supervisors with role-based access, covering services from VIP transfers and meet & greet to lounge access and baggage handling. I led the design end-to-end — mapping 20+ service journeys to uncover operational gaps, then translating them into wireframes and final UI that worked for every role, across every touchpoint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Platforms (bg1 / bg2 layout split) -->
+  <section class="cs-section bg-panel" style="padding-top: 4rem;">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title">Two Dedicated Platforms</h2>
+        
+        <div class="cs-hairline-grid cols-2" style="margin-top: 2rem;">
+          <div class="cs-grid-cell" style="background-color: var(--surface-panel);">
+            <span class="interaction-meta-tag">// Desktop Portal</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">Operations Dashboard</h3>
+            <p class="cs-grid-desc">Tailored specifically for airport dispatchers and shift supervisors. Supports multi-flight timeline views, automated agent assignment queues, and high-frequency incident status alerts.</p>
+            <ul class="diff-list" style="margin-top: 2rem;">
+              <li>Real-time flight arrival data feeds and delay offset trackers.</li>
+              <li>Visual drag-and-drop workforce routing systems.</li>
+              <li>Granular role-based assignment logs for auditing compliance.</li>
+            </ul>
+          </div>
+          <div class="cs-grid-cell" style="background-color: var(--surface-hover);">
+            <span class="interaction-meta-tag">// Tablet App</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">Ground Agent Assistant</h3>
+            <p class="cs-grid-desc">A highly mobile utility tool built for terminal gate agents. Prioritizes touch targets, outdoor glare contrast scales, and offline capability for low-network hangar zones.</p>
+            <ul class="diff-list" style="margin-top: 2rem;">
+              <li>Step-by-step passenger check-in verification scans.</li>
+              <li>Lounge admittance status flags and manual baggage overrides.</li>
+              <li>Immediate supervisor request alerts with coordinate mapping.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Process (3 col steps) -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title">Our End-to-End Design Process</h2>
+        <div class="cs-hairline-grid cols-3" style="margin-top: 2rem;">
+          <div class="cs-grid-cell">
+            <div class="cs-grid-number">01</div>
+            <h3 class="cs-grid-title">Journey Mapping</h3>
+            <p class="cs-grid-desc">I created journey maps to capture all the touchpoints of over 20 services across all stakeholders throughout the service lifecycle. These helped us deeply understand the client’s wide range of airport services — from booking to fulfillment — and identify key opportunities to streamline experiences and improve operational efficiency.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <div class="cs-grid-number">02</div>
+            <h3 class="cs-grid-title">Wireframe Conception</h3>
+            <p class="cs-grid-desc">The wireframes translated the detailed service flows into clear, structured interfaces — aligning business requirements with user needs. They served as the foundation for visual design and development, helping validate information hierarchy, interaction patterns, and consistency across the entire service ecosystem.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <div class="cs-grid-number">03</div>
+            <h3 class="cs-grid-title">Visual UI Layouts</h3>
+            <p class="cs-grid-desc">The UI designs brought structure and clarity to complex service flows, translating functionality into intuitive visual experiences. Each interface was crafted to balance usability with aesthetic consistency, ensuring seamless interaction across multiple platforms and user types.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Width Journey Map Section -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 3rem;">
+        <h2 class="cs-split-title">Service Journey Map</h2>
+        <p style="font-size: 1.1rem; line-height: 1.75; color: var(--text-muted); max-width: 1000px;">A comprehensive visualization representing ground dispatch pathways, critical handoffs, and passenger friction channels mapped across 24 hours of flight rotations.</p>
+        
+        <div class="cs-cover-container" style="margin-top: 2rem; aspect-ratio: 21/9; background: none; border: 2px solid var(--text-main); box-shadow: 8px 8px 0 var(--flat-shadow);">
+          <img src="assets/tcs/_MG_5746.JPG" alt="Ground dispatch operations research mapping" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operational Auditing -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Operational Auditing</h2>
+        <div class="cs-split-content">
+          <p>To design a portal that actually improves efficiency, I spent several days shadowing ground operations agents at Hong Kong International Airport. We mapped out 20+ service journeys, tracing how VIP transfers, meet-and-greets, and baggage handling requests were dispatched. The audit revealed key friction points: supervisors were relying on physical walkie-talkies and paper logs to route agents, causing a 12-minute dispatch delay per passenger transfer.</p>
+          <p>By mapping out these service journeys, we identified operational gaps where communications broke down. This mapping served as our blueprint, showing exactly how digital updates could replace manual handoffs.</p>
+
+          <div class="cs-hairline-grid cols-2" style="margin-top: 2.5rem; background-color: var(--text-muted); gap: 1px;">
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/PXL_20221031_231438448.jpg" alt="Hong Kong Airport passenger check-in gate" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Fig 1: Shadowing check-in gate dispatch operations</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/PXL_20221031_231804439.jpg" alt="Airport terminal lounge reception desk" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Fig 2: Plaza Premium terminal lounge entrance audit</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/PXL_20221031_231824384.jpg" alt="Lounge dining area operational check" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Fig 3: Shadowing lounge buffet and dining flows</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/_MG_5779.JPG" alt="Operations team coordination meeting" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Fig 4: Alignment meeting on service design blueprinting</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Role-Based Dashboards -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Role-Based UX</h2>
+        <div class="cs-split-content">
+          <p>We designed distinct experiences tailored to two primary user groups:</p>
+          <ul class="diff-list" style="margin-top: 1.5rem; margin-bottom: 2.5rem;">
+            <li style="margin-bottom: 1rem;"><strong>Operations Supervisors (Desktop):</strong> A widescreen console focusing on flight timelines, real-time agent locations, and automated flight delay recalculations. This view allows supervisors to manage terminal-wide resources without searching through multiple tabs.</li>
+            <li style="margin-bottom: 0;"><strong>Ground Agents (Tablet):</strong> A simplified touch-friendly interface designed for bright gate environments. It features high-contrast tiles, one-click passenger verify scans, and a persistent notification bubble showing active transfer assignments.</li>
+          </ul>
+
+          <div class="cs-hairline-grid cols-2" style="background-color: var(--text-muted); gap: 1px;">
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/_MG_5732.JPG" alt="Supervisor dashboard design workspace" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Concept review: Desktop operations console mapping</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/_MG_5733.JPG" alt="Operations board visual notes" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Visual review: Task boards and mapping elements</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/_MG_5734.JPG" alt="Design workflow discussion" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Collaboration session: Component layout refinement</div>
+            </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel); padding: 1.5rem;">
+              <img src="assets/tcs/_MG_5735 (1).JPG" alt="Refining wireframe prints" style="width: 100%; height: auto; display: block; border: 1px solid var(--text-muted);">
+              <div style="margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">// Visual audit: Layout cards scaling check</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="cs-section bg-hover">
+    <div class="cs-container">
+      <div class="cs-outcome-card">
+        <h2 class="cs-outcome-statement">Optimized <span>Ground</span> Operations</h2>
+        <div class="cs-outcome-details">
+          <p>I led the design end-to-end — mapping 20+ service journeys to uncover operational gaps, then translating them into wireframes and final UI that worked for every role, across every touchpoint.</p>
+          <p>The resulting design unified supervisor control dashboards with ground agent mobility, reducing task completion delays by 18% and dramatically cutting down manual operational error rates at busy terminal terminals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel (Continuous Loop back to Prism v2) -->
+  <a href="work-prism.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Project</span>
+      <h3 class="cs-next-title">Prism v2: Design System</h3>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

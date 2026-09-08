@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vector Curves Acceleration // Chaitanya Katulwar Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <style>
+    .blog-article-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 12rem 2rem 8rem 2rem;
+    }
+    .blog-header {
+      margin-bottom: 4rem;
+    }
+    .blog-meta {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .blog-title {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+    .blog-content {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .blog-content p {
+      margin-bottom: 2rem;
+    }
+    .blog-content h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 3.5rem 0 1.5rem 0;
+      text-transform: uppercase;
+      letter-spacing: -0.02rem;
+    }
+    .blog-content blockquote {
+      border-left: 4px solid var(--accent-primary) !important;
+      padding: 1rem 0 1rem 2rem;
+      margin: 3rem 0;
+      font-family: 'Lexend', sans-serif;
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.3rem;
+    }
+    .blog-content pre {
+      background: var(--surface-panel);
+      padding: 2rem;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin: 3rem 0;
+      box-shadow: 6px 6px 0 var(--flat-shadow);
+      transition: background-color var(--studio-duration) var(--studio-easing);
+    }
+  </style>
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      <a href="index.html#industry" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      <a href="index.html#sandbox" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span>Sandbox</span>
+      </a>
+      <a href="index.html#photography" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <span>Photography</span>
+      </a>
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Article Container -->
+  <article class="blog-article-body">
+    <header class="blog-header">
+      <span class="blog-meta">May 2026 // Vector Curves Acceleration</span>
+      <h1 class="blog-title">Choreographing Non-Linear Accelerations Inside Web Layout Component Boundaries</h1>
+    </header>
+    
+    <div class="blog-content">
+      <p>Linear motion feels artificial because it does not exist in nature. Physical objects possess mass, inertia, and encounter friction. In screen design, we mimic physical space to create structural safety and orientation cues. Easing curves are the vector equations that direct how components enter and exit user attention.</p>
+      
+      <h2>Beyond Ease-In-Out</h2>
+      <p>The standard browser default `ease-in-out` is too symmetrical, making components feel slugish on departure and soft on entry. Instead, high-performance web products leverage custom cubic-bezier values that build acceleration peaks early and decelerate slowly. This creates an immediate feel of responsive control.</p>
+      
+      <blockquote>
+        "An interface that responds with a linear velocity map is essentially screaming its digital fabrication. The physics must feel organic to feel premium."
+      </blockquote>
+      
+      <h2>Structuring Web Animation Bezier Curves</h2>
+      <p>In our design variables stylesheet, we define standard eases as reusable CSS parameters. Our default transition speed variables use custom cubic-bezier parameters calibrated to feel fluid and snappy:</p>
+      
+      <pre>
+/* Custom Easing Variables */
+:root {
+  --studio-easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --studio-duration: 400ms;
+}
+      </pre>
+
+      <p>By enforcing this standard across all components, layout changes and tab transitions flow with visual elegance. It prevents interfaces from jumping abruptly, maintaining user focus and reinforcing structure.</p>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

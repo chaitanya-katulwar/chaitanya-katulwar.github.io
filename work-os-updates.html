@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Up to Date with OS // Chaitanya Katulwar UX Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/case-study.css">
+  <script>
+    const savedTheme = localStorage.getItem('studio-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="nav-wrapper-fixed">
+    <div class="central-menu-cluster">
+      <a href="index.html" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Strange Titles</span>
+      </a>
+      
+      <a href="index.html#industry" class="nav-btn active-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Industry</span>
+      </a>
+      
+      <a href="index.html#about" class="nav-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About</span>
+      </a>
+    </div>
+
+    <div class="theme-toggle-zone">
+      <div class="brutalist-toggle-track">
+        <button class="toggle-segment-btn moon-active" onclick="setStudioTheme('dark')" aria-label="Dark Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="toggle-segment-btn sun-active" onclick="setStudioTheme('light')" aria-label="Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Billboard -->
+  <header class="cs-hero">
+    <div class="cs-hero-tagline">BookMyShow // Platform Alignment System</div>
+    <h1 class="cs-hero-title">Up to Date with OS: Translating <span>Evolving Guidelines</span></h1>
+    
+    <div class="cs-meta-grid">
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Role</span>
+        <span class="cs-meta-value">Lead Systems UX Designer</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Scope</span>
+        <span class="cs-meta-value">OS Alignment Architecture</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Platform</span>
+        <span class="cs-meta-value">iOS & Android App Systems</span>
+      </div>
+      <div class="cs-meta-cell">
+        <span class="cs-meta-label">Deliverable</span>
+        <span class="cs-meta-value">Platform Guidelines Spec</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cover Image -->
+  <section class="cs-cover-image">
+    <div class="cs-cover-container">
+      <span class="cs-cover-placeholder">[ Full-Width Android 15 Edge-to-Edge System Specs Preview ]</span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Overview</h2>
+        <div class="cs-split-content">
+          <p>Every major iOS and Android release is a deadline nobody puts on the roadmap. Miss it, and you risk App Store rejection, jarring visual inconsistencies, and an app that starts to feel out of step with the OS it lives on. At BookMyShow, I owned the design response to platform updates — translating Apple and Google's evolving guidelines into concrete decisions across the product.</p>
+          <p>The most substantial was Android 15's shift to edge-to-edge displays, which required rethinking how every screen handles the status bar and navigation bar. I designed the guidelines that gave both designers and developers a clear, shared framework for getting it right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Alignment Risks (3 columns) -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title" style="margin-bottom: 0;">The Risks of Lagging Behind</h2>
+        <div class="cs-hairline-grid cols-3" style="margin-top: 2rem;">
+          <div class="cs-grid-cell">
+            <div class="cs-grid-number">01</div>
+            <h3 class="cs-grid-title">Store Rejection</h3>
+            <p class="cs-grid-desc">Missing support timelines on critical OS overrides often results in deployment suspension or immediate App Store rejection by auditors.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <div class="cs-grid-number">02</div>
+            <h3 class="cs-grid-title">Jarring Layouts</h3>
+            <p class="cs-grid-desc">Uncoordinated safe-area offsets manifest as layout overlapping, clipping text, and rendering broken interfaces on new handsets.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <div class="cs-grid-number">03</div>
+            <h3 class="cs-grid-title">Perceived Decay</h3>
+            <p class="cs-grid-desc">When application components look and react differently than native OS panels, users perceive the product as neglected or unmaintained.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Edge to Edge Android 15 Featured Grid -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Edge-to-Edge (Android 15)</h2>
+        <div class="cs-split-content">
+          <p>Android 15 enforces edge-to-edge rendering by default. This meant we had to systematically address status bar margins, system gesture bar transparency, and custom background paddings on every layout. I designed guidelines addressing two distinct audiences: designers and developers.</p>
+          
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; margin-top: 4rem;">
+            <!-- Left: Tall Phone Image Mockup -->
+            <div class="interaction-media-cell" style="aspect-ratio: 9/16; background: none; border: 2px solid var(--text-main); box-shadow: 6px 6px 0 var(--flat-shadow);">
+              <div class="interaction-video-box" style="height: 100%;">
+                <img src="assets/os-updates/screenshot_2025-11-08_at_1.13.24___pm.png" alt="Android 15 Edge-to-Edge Layout Screenshot" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              </div>
+            </div>
+            
+            <!-- Right: Stack of Two smaller cells -->
+            <div style="display: flex; flex-direction: column; gap: 3rem;">
+              <div class="cs-grid-cell" style="background-color: var(--surface-panel); flex: 1;">
+                <span class="interaction-meta-tag">// For Designers</span>
+                <h4 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem;">Canvas & Asset Safety Area specs</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">How components should account for native drawer overlays, status bars, and floating navigators in design source files.</p>
+              </div>
+              <div class="cs-grid-cell" style="background-color: var(--surface-panel); flex: 1;">
+                <span class="interaction-meta-tag">// For Developers</span>
+                <h4 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem;">System Insets & Window Offset guidelines</h4>
+                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">A shared programmatic vocabulary for mapping standard library properties to Android WindowInsets variables in code.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other updates (3 columns) -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2" style="grid-template-columns: 1fr; gap: 4rem;">
+        <h2 class="cs-split-title">Guidelines Matrix</h2>
+        <div class="cs-hairline-grid cols-3" style="margin-top: 2rem;">
+          <div class="cs-grid-cell">
+            <span class="interaction-meta-tag">// iOS Platforms</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">Dynamic Island UI specs</h3>
+            <p class="cs-grid-desc">Designed standard states and container heights to prevent transactional status pills from conflicting with status bar variables.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <span class="interaction-meta-tag">// Android Platforms</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">Predictive Back gestures</h3>
+            <p class="cs-grid-desc">Mapped layout swipe vectors to ensure predictive back transitions show standard navigation cards correctly before fully exiting.</p>
+          </div>
+          <div class="cs-grid-cell">
+            <span class="interaction-meta-tag">// Combined Ecosystem</span>
+            <h3 class="cs-grid-title" style="margin-top: 1rem;">OS Font Scaling rules</h3>
+            <p class="cs-grid-desc">Engineered responsive text grids to scale with native accessibility sizes without breaking grid card structures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Inset Strategy -->
+  <section class="cs-section bg-main">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">System Insets</h2>
+        <div class="cs-split-content">
+          <p>When Google announced that Android 15 would draw content under system bars by default, it meant our standard bottom sheets and floating buttons would clash with native system icons. I led a layout audit to convert static height components into responsive containers that request native system safety paddings.</p>
+          <p>We mapped the system-drawn heights dynamically, implementing a baseline padding token system. If the bottom system navigation bar is active, the container automatically adds a safety buffer matching the exact system-reported insets, preventing transactional buttons from overlapping the OS pill indicator.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Platform Testing -->
+  <section class="cs-section bg-panel">
+    <div class="cs-container">
+      <div class="cs-split-2">
+        <h2 class="cs-split-title">Platform Testing</h2>
+        <div class="cs-split-content">
+          <p>To verify these guidelines, I established a cross-platform visual check routine. We tested our layouts across a matrix of physical handsets—from the Dynamic Island on the iPhone 15 series to varying punch-hole camera placements on mid-range Android devices.</p>
+          <p>Each screen layout was verified under dynamic text sizes up to 200% for accessibility support, ensuring that ticket counts and checkout timers remain fully clickable and visible even under severe system overrides.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="cs-section bg-hover">
+    <div class="cs-container">
+      <div class="cs-outcome-card">
+        <h2 class="cs-outcome-statement">Continuous <span>Compliance</span> & Quality</h2>
+        <div class="cs-outcome-details">
+          <p>I made regular updates to keep the product aligned with the latest iOS and Android platform guidelines. These included visual adjustments, interaction updates, and accessibility improvements driven by evolving policies from Apple and Google.</p>
+          <p>Ensuring compliance helped maintain a consistent and intuitive experience for users while supporting long-term platform stability across critical product releases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Project Panel -->
+  <a href="work-spotify-widget.html" class="cs-next-panel">
+    <div>
+      <span class="cs-next-label">Next Project</span>
+      <h3 class="cs-next-title">Spotify Widget Integration</h3>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <span>© 2026 CHAITANYA KATULWAR. ALL RIGHTS RESERVED</span>
+    <div class="cs-footer-links">
+      <a href="index.html">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="mailto:chaitanyakatulwar@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function setStudioTheme(themeToken) {
+      document.documentElement.setAttribute('data-theme', themeToken);
+      localStorage.setItem('studio-theme', themeToken);
+    }
+  </script>
+</body>
+</html>

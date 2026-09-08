@@ -1,0 +1,490 @@
+/* === Case Study Layout Visual Framework === */
+
+.nav-wrapper-fixed a,
+.nav-wrapper-fixed a:hover,
+.nav-wrapper-fixed a:visited,
+.nav-wrapper-fixed a:focus,
+.nav-wrapper-fixed a:active,
+.nav-wrapper-fixed a *,
+.nav-wrapper-fixed a span {
+  text-decoration: none !important;
+  outline: none;
+}
+
+
+
+/* Case Study Billboard Hero */
+.cs-hero {
+  padding: 12rem 4rem 4rem 4rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.cs-hero-tagline {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+}
+
+.cs-hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  max-width: 1200px;
+}
+
+.cs-hero-title span {
+  color: var(--accent-primary);
+}
+
+/* 4-Column Metadata Grid */
+.cs-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--surface-panel);
+  margin-top: 4rem;
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+  transition: background-color var(--studio-duration) var(--studio-easing);
+}
+html[data-theme="light"] .cs-meta-grid {
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.03);
+}
+
+.cs-meta-cell {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cs-meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08rem;
+}
+
+.cs-meta-value {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Full Width Media Cover */
+.cs-cover-image {
+  width: 100%;
+  background: var(--surface-hover);
+  padding: 6rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cs-cover-container {
+  max-width: 1440px;
+  width: 100%;
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--surface-panel);
+  box-shadow: 12px 12px 0px rgba(0,0,0,0.2);
+}
+
+.cs-cover-placeholder {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Section Rhythm Wrapper */
+.cs-section {
+  padding: 8rem 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cs-section.bg-main { background-color: var(--bg-main); }
+.cs-section.bg-panel { background-color: var(--surface-panel); }
+.cs-section.bg-hover { background-color: var(--surface-hover); }
+
+.cs-container {
+  max-width: 1600px;
+  width: 100%;
+}
+
+/* 2-Column Overview and Details */
+.cs-split-2 {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 6rem;
+}
+
+.cs-split-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  position: relative;
+  height: fit-content;
+}
+
+.cs-split-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.6rem; left: 0;
+  width: 40px; height: 3px;
+  background-color: var(--accent-primary);
+}
+
+.cs-split-content {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.cs-split-content p {
+  margin-bottom: 2rem;
+}
+
+.cs-split-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlight blocks & quote boxes */
+.cs-quote-box {
+  background: var(--bg-main);
+  padding: 3rem;
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-main);
+  margin: 3rem 0;
+}
+
+/* Hairline Grid system */
+.cs-hairline-grid {
+  display: grid;
+  background-color: var(--text-muted);
+  opacity: 0.95;
+  gap: 1px;
+}
+
+.cs-hairline-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cs-hairline-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+.cs-grid-cell {
+  background-color: var(--surface-panel);
+  padding: 4rem 3rem;
+  transition: background-color var(--studio-duration) var(--studio-easing);
+}
+.cs-grid-cell:hover {
+  background-color: var(--surface-hover);
+}
+
+.cs-grid-number {
+  font-family: 'Lexend', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--accent-primary);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.cs-grid-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.cs-grid-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Before / After Tabbed Toggle */
+.cs-slider-tabs {
+  display: flex;
+  gap: 1px;
+  background-color: var(--text-muted);
+  width: fit-content;
+  margin-bottom: 2rem;
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
+}
+
+.cs-slider-btn {
+  background-color: var(--surface-panel);
+  color: var(--text-muted);
+  font-family: 'Lexend', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all var(--studio-duration) var(--studio-easing);
+}
+
+.cs-slider-btn:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-main);
+}
+
+.cs-slider-btn.active-tab {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.cs-slider-media {
+  background-color: var(--surface-panel);
+  aspect-ratio: 16/10;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 12px 12px 0px rgba(0,0,0,0.2);
+}
+
+.cs-slider-view {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-slider-view.active-view {
+  display: flex;
+}
+
+/* Before/After bullet differences grid */
+.diff-comparison-deck {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.diff-column h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.diff-dot {
+  width: 8px; height: 8px;
+  background-color: var(--text-muted);
+}
+.diff-column.after-column .diff-dot {
+  background-color: var(--accent-primary);
+}
+
+.diff-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.diff-list li {
+  line-height: 1.6;
+  color: var(--text-muted);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.diff-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+}
+
+/* Micro Interactions specific layout */
+.interaction-media-cell {
+  background-color: var(--surface-panel);
+  transition: transform var(--studio-duration) var(--studio-easing), box-shadow var(--studio-duration) var(--studio-easing);
+  display: flex;
+  flex-direction: column;
+}
+
+.interaction-video-box {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-color: var(--surface-hover);
+  position: relative;
+  overflow: hidden;
+}
+
+.interaction-video-box span {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+  color: var(--text-muted);
+}
+
+.interaction-meta-box {
+  padding: 2.5rem;
+  background-color: var(--surface-panel);
+}
+
+.interaction-meta-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-motion);
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.interaction-meta-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.interaction-meta-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Outcome Section Styling */
+.cs-outcome-card {
+  background: var(--surface-hover);
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  box-shadow: 14px 14px 0px rgba(0,0,0,0.25);
+  margin-top: 2rem;
+}
+
+.cs-outcome-statement {
+  font-family: 'Lexend', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.cs-outcome-statement span {
+  color: var(--accent-primary);
+}
+
+.cs-outcome-details {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Next Project Panel styling */
+.cs-next-panel {
+  width: 100%;
+  background-color: var(--surface-panel);
+  padding: 6rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: background-color var(--studio-duration) var(--studio-easing);
+}
+
+.cs-next-panel:hover {
+  background-color: var(--surface-hover);
+}
+
+.cs-next-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.15rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.cs-next-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cs-next-arrow {
+  font-size: 4rem;
+  font-weight: 200;
+  color: var(--accent-primary);
+  transition: transform var(--studio-duration) var(--studio-easing);
+}
+
+.cs-next-panel:hover .cs-next-arrow {
+  transform: translate3d(15px, 0, 0);
+}
+
+/* Footer Section */
+.cs-footer {
+  padding: 4rem;
+  border-top: 1px solid var(--spiral-line) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cs-footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.cs-footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color var(--studio-duration) var(--studio-easing);
+}
+
+.cs-footer-links a:hover {
+  color: var(--text-main);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1150px) {
+  .cs-split-2, .cs-outcome-card { grid-template-columns: 1fr; gap: 4rem; }
+  .cs-meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-hero { padding: 10rem 2.5rem 3rem 2.5rem; }
+  .cs-section, .cs-cover-image { padding: 6rem 2.5rem; }
+  .cs-outcome-card { padding: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .cs-meta-grid { grid-template-columns: 1fr; }
+  .cs-hero-title { font-size: 2.8rem; }
+  .cs-hero { padding: 8rem 1.5rem 2rem 1.5rem; }
+  .cs-section, .cs-cover-image { padding: 4rem 1.5rem; }
+  .diff-comparison-deck { grid-template-columns: 1fr; gap: 3rem; }
+  .cs-outcome-card { padding: 2.5rem; }
+  .cs-outcome-statement { font-size: 1.6rem; }
+  .cs-footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+}
