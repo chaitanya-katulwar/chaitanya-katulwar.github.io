@@ -573,6 +573,31 @@ html[data-theme="light"] .vector-track-bar { background: rgba(0,0,0,0.08); }
   color: var(--accent-primary);
 }
 
+.contact-channel-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.contact-channel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--surface-hover);
+  border: 1px solid var(--text-muted);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: all var(--studio-duration) var(--studio-easing);
+}
+
+.contact-channel-card:hover .contact-channel-icon {
+  background: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+}
+
 .contact-channel-meta {
   display: flex;
   flex-direction: column;
