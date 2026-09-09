@@ -71,8 +71,8 @@
 
   <!-- Cover Image -->
   <section class="cs-cover-image">
-    <div class="cs-cover-container">
-      <span class="cs-cover-placeholder">[ Full-Width Android 15 Edge-to-Edge System Specs Preview ]</span>
+    <div class="cs-cover-container" style="background: none; box-shadow: none;">
+      <img src="assets/os-updates/screenshot_2025-11-08_at_1.13.24___pm.png" alt="Platform Alignment System Specifications" style="width: 100%; height: 100%; object-fit: cover; object-position: top; box-shadow: 12px 12px 0 var(--flat-shadow); border: 2px solid var(--text-main);">
     </div>
   </section>
 
@@ -123,26 +123,23 @@
         <div class="cs-split-content">
           <p>Android 15 enforces edge-to-edge rendering by default. This meant we had to systematically address status bar margins, system gesture bar transparency, and custom background paddings on every layout. I designed guidelines addressing two distinct audiences: designers and developers.</p>
           
-          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; margin-top: 4rem;">
-            <!-- Left: Tall Phone Image Mockup -->
-            <div class="interaction-media-cell" style="aspect-ratio: 9/16; background: none; border: 2px solid var(--text-main); box-shadow: 6px 6px 0 var(--flat-shadow);">
-              <div class="interaction-video-box" style="height: 100%;">
-                <img src="assets/os-updates/screenshot_2025-11-08_at_1.13.24___pm.png" alt="Android 15 Edge-to-Edge Layout Screenshot" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-              </div>
+          <div class="cs-hairline-grid cols-2" style="margin-top: 2.5rem; background-color: var(--text-muted); gap: 1px;">
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel);">
+              <span class="interaction-meta-tag">// For Designers</span>
+              <h3 class="cs-grid-title" style="margin-top: 1rem;">Canvas & Asset Safety Area specs</h3>
+              <p class="cs-grid-desc">How components should account for native drawer overlays, status bars, and floating navigators in design source files.</p>
             </div>
-            
-            <!-- Right: Stack of Two smaller cells -->
-            <div style="display: flex; flex-direction: column; gap: 3rem;">
-              <div class="cs-grid-cell" style="background-color: var(--surface-panel); flex: 1;">
-                <span class="interaction-meta-tag">// For Designers</span>
-                <h4 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem;">Canvas & Asset Safety Area specs</h4>
-                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">How components should account for native drawer overlays, status bars, and floating navigators in design source files.</p>
-              </div>
-              <div class="cs-grid-cell" style="background-color: var(--surface-panel); flex: 1;">
-                <span class="interaction-meta-tag">// For Developers</span>
-                <h4 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem;">System Insets & Window Offset guidelines</h4>
-                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">A shared programmatic vocabulary for mapping standard library properties to Android WindowInsets variables in code.</p>
-              </div>
+            <div class="cs-grid-cell" style="background-color: var(--surface-panel);">
+              <span class="interaction-meta-tag">// For Developers</span>
+              <h3 class="cs-grid-title" style="margin-top: 1rem;">System Insets & Window Offset guidelines</h3>
+              <p class="cs-grid-desc">A shared programmatic vocabulary for mapping standard library properties to Android WindowInsets variables in code.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 3rem; border: 2px solid var(--text-main); box-shadow: 8px 8px 0 var(--flat-shadow); overflow: hidden; background-color: var(--surface-panel);">
+            <img src="assets/os-updates/edge-to-edge-guidelines.png" alt="Android 15 Edge-to-Edge Design Guidelines and Behaviors" style="width: 100%; height: auto; display: block;">
+            <div style="padding: 1.25rem 1.5rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--text-muted); background: var(--surface-panel);">
+              // Specification: Android 15+ edge-to-edge layout patterns, status/nav bar treatments, and surface paddings
             </div>
           </div>
 
@@ -171,6 +168,13 @@
             <span class="interaction-meta-tag">// Combined Ecosystem</span>
             <h3 class="cs-grid-title" style="margin-top: 1rem;">OS Font Scaling rules</h3>
             <p class="cs-grid-desc">Engineered responsive text grids to scale with native accessibility sizes without breaking grid card structures.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 3rem; border: 2px solid var(--text-main); box-shadow: 8px 8px 0 var(--flat-shadow); overflow: hidden; background-color: var(--surface-panel);">
+          <img src="assets/os-updates/error-screens-guidelines.png" alt="Error Screen Guidelines, Layouts, and Specifications" style="width: 100%; height: auto; display: block;">
+          <div style="padding: 1.25rem 1.5rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--text-muted); background: var(--surface-panel);">
+            // Specification: Multi-platform error screen configurations, copy hierarchy, and responsive breakpoint rules
           </div>
         </div>
       </div>
