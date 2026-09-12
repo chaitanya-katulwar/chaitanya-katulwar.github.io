@@ -469,23 +469,163 @@ html[data-theme="light"] .cs-meta-grid {
   color: var(--text-main);
 }
 
+/* Global Media Constraint Rules */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.cs-cover-container img,
+.cs-media-box img,
+.lookbook-card-media img {
+  max-height: 80vh;
+  object-fit: cover;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1150px) {
-  .cs-split-2, .cs-outcome-card { grid-template-columns: 1fr; gap: 4rem; }
+  .cs-split-2, .cs-outcome-card { grid-template-columns: 1fr; gap: 3rem; }
   .cs-meta-grid { grid-template-columns: repeat(2, 1fr); }
-  .cs-hero { padding: 10rem 2.5rem 3rem 2.5rem; }
-  .cs-section, .cs-cover-image { padding: 6rem 2.5rem; }
-  .cs-outcome-card { padding: 4rem; }
+  .cs-hero { padding: 8rem 2rem 3rem 2rem; }
+  .cs-section, .cs-cover-image { padding: 5rem 2rem; }
+  .cs-outcome-card { padding: 3rem; }
 }
 
 @media (max-width: 768px) {
-  .cs-meta-grid { grid-template-columns: 1fr; }
-  .cs-hero-title { font-size: 2.8rem; }
-  .cs-hero { padding: 8rem 1.5rem 2rem 1.5rem; }
-  .cs-section, .cs-cover-image { padding: 4rem 1.5rem; }
-  .diff-comparison-deck { grid-template-columns: 1fr; gap: 3rem; }
-  .cs-hairline-grid.cols-3, .cs-hairline-grid.cols-2 { grid-template-columns: 1fr; }
-  .cs-outcome-card { padding: 2.5rem; }
-  .cs-outcome-statement { font-size: 1.6rem; }
-  .cs-footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  .cs-hero {
+    padding: 5.5rem 1.25rem 2rem 1.25rem;
+  }
+  
+  .cs-hero-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cs-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.15;
+  }
+
+  .cs-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .cs-meta-cell {
+    padding: 1.2rem 1rem;
+    gap: 0.3rem;
+  }
+
+  .cs-meta-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .cs-meta-value {
+    font-size: 0.95rem;
+  }
+
+  .cs-cover-image {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .cs-cover-container {
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .cs-section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .cs-split-2 {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .cs-split-title {
+    font-size: 1.15rem;
+  }
+
+  .cs-split-content {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .diff-comparison-deck {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cs-hairline-grid.cols-3,
+  .cs-hairline-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-outcome-card {
+    padding: 2rem 1.25rem;
+    box-shadow: 6px 6px 0px var(--flat-shadow);
+  }
+
+  .cs-outcome-statement {
+    font-size: 1.4rem;
+    line-height: 1.25;
+  }
+
+  .cs-outcome-details {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    gap: 1rem;
+  }
+
+  .cs-next-panel {
+    padding: 3rem 1.25rem;
+  }
+
+  .cs-next-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .cs-next-arrow {
+    font-size: 2.5rem;
+  }
+
+  .cs-footer {
+    padding: 2.5rem 1.25rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .cs-footer-links {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-meta-cell {
+    padding: 1rem 0.75rem;
+  }
+
+  .cs-meta-value {
+    font-size: 0.88rem;
+  }
+
+  .cs-hero-title {
+    font-size: clamp(1.8rem, 8.5vw, 2.4rem);
+  }
+
+  .cs-next-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cs-next-arrow {
+    align-self: flex-end;
+  }
 }

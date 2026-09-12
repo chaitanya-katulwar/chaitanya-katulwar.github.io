@@ -559,6 +559,37 @@
       font-size: 0.95rem;
       line-height: 1.8;
     }
+
+    @media (max-width: 768px) {
+      .semantic-swatch-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        font-size: 0.78rem;
+      }
+      .measurement-spec-table {
+        font-size: 0.75rem;
+      }
+      .measurement-spec-table th, .measurement-spec-table td {
+        padding: 0.6rem 0.75rem;
+      }
+      .spring-controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .spring-track-slot {
+        max-width: 100%;
+      }
+      .board-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+      .category-nav-chip {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.8rem;
+      }
+    }
   </style>
   <script>
     // Immediate theme restoration to prevent flashing

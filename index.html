@@ -223,6 +223,8 @@
         }
 
         const squares = document.querySelectorAll('.nested-square-node');
+        const isMobile = window.innerWidth <= 768;
+        const responsiveScale = isMobile ? Math.min(0.35, window.innerWidth / 1150) : 1;
         squares.forEach((sq, i) => {
           const scaleFactor = (i + 1) * 0.05;
           const scrollRotationSpeed = 0.09 - (i * 0.013);
@@ -231,7 +233,7 @@
           accumulatedAngles[i] += baseRotationSpeeds[i] * dt * speedMultiplier;
           
           // Compounded scroll depth zoom + rotation vectors without absolute offsets
-          sq.style.transform = `scale(${1 + scrolled * scaleFactor * 0.0025}) rotate(${accumulatedAngles[i] + scrolled * scrollRotationSpeed}deg)`;
+          sq.style.transform = `scale(${responsiveScale * (1 + scrolled * scaleFactor * 0.0025)}) rotate(${accumulatedAngles[i] + scrolled * scrollRotationSpeed}deg)`;
         });
       }
 
