@@ -149,7 +149,7 @@
                   <strong class="contact-channel-value">chaitanyakatulwar@gmail.com</strong>
                 </div>
               </div>
-              <span class="contact-arrow-icon">↗</span>
+              <svg class="contact-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
 
             <a href="tel:+918600030547" class="contact-channel-card">
@@ -162,7 +162,7 @@
                   <strong class="contact-channel-value">+91 8600030547</strong>
                 </div>
               </div>
-              <span class="contact-arrow-icon">↗</span>
+              <svg class="contact-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
 
             <a href="https://www.instagram.com/chaitanyakatulwar/" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
@@ -175,7 +175,7 @@
                   <strong class="contact-channel-value">@chaitanyakatulwar</strong>
                 </div>
               </div>
-              <span class="contact-arrow-icon">↗</span>
+              <svg class="contact-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </div>
         </div>
@@ -223,8 +223,6 @@
         }
 
         const squares = document.querySelectorAll('.nested-square-node');
-        const isMobile = window.innerWidth <= 768;
-        const responsiveScale = isMobile ? Math.min(0.35, window.innerWidth / 1150) : 1;
         squares.forEach((sq, i) => {
           const scaleFactor = (i + 1) * 0.05;
           const scrollRotationSpeed = 0.09 - (i * 0.013);
@@ -233,7 +231,7 @@
           accumulatedAngles[i] += baseRotationSpeeds[i] * dt * speedMultiplier;
           
           // Compounded scroll depth zoom + rotation vectors without absolute offsets
-          sq.style.transform = `scale(${responsiveScale * (1 + scrolled * scaleFactor * 0.0025)}) rotate(${accumulatedAngles[i] + scrolled * scrollRotationSpeed}deg)`;
+          sq.style.transform = `scale(${1 + scrolled * scaleFactor * 0.0025}) rotate(${accumulatedAngles[i] + scrolled * scrollRotationSpeed}deg)`;
         });
       }
 
@@ -275,8 +273,12 @@
       const hash = window.location.hash;
       if (hash === '#industry') {
         switchRoute('industry-route');
-      } else if (hash === '#about') {
+      } else if (hash === '#about' || hash === '#contact') {
         switchRoute('about-route');
+        if (hash === '#contact') {
+          const cards = document.querySelector('.direct-contact-grid');
+          if (cards) cards.scrollIntoView();
+        }
       } else {
         switchRoute('home-route');
       }
