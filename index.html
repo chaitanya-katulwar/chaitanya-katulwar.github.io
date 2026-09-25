@@ -54,7 +54,19 @@
         <div class="nested-square-node sq-5"></div>
         <div class="nested-square-node sq-6"></div>
       </div>
-      <h1 class="hero-title">Strange<br/>Titles</h1>
+      <h1 class="hero-title" id="hero-title">Chaitanya<br/>Katulwar</h1>
+      <script>
+        (function() {
+          const params = new URLSearchParams(window.location.search);
+          const mode = (params.get('mode') || params.get('title') || '').toLowerCase();
+          const day = new Date().getDay(); // 0 = Sunday, 6 = Saturday
+          const isWeekend = mode ? (mode === 'weekend' || mode === 'strange' || mode === 'strangetitles') : (day === 0 || day === 6);
+          const heroEl = document.getElementById('hero-title');
+          if (heroEl) {
+            heroEl.innerHTML = isWeekend ? 'Strange<br/>Titles' : 'Chaitanya<br/>Katulwar';
+          }
+        })();
+      </script>
     </header>
 
     <main class="studio-grid-canvas">
